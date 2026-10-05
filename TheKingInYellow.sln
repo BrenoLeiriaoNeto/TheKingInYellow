@@ -1,0 +1,27 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheKingInYellow", "TheKingInYellow.csproj", "{0E36A8BC-672F-47DA-A166-8D8E8F905A80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheKingInYellow.Core", "TheKingInYellow.Core\TheKingInYellow.Core.csproj", "{F4A40A5F-C504-4024-8FBD-5AE04E847165}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E36A8BC-672F-47DA-A166-8D8E8F905A80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E36A8BC-672F-47DA-A166-8D8E8F905A80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E36A8BC-672F-47DA-A166-8D8E8F905A80}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{0E36A8BC-672F-47DA-A166-8D8E8F905A80}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{0E36A8BC-672F-47DA-A166-8D8E8F905A80}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{0E36A8BC-672F-47DA-A166-8D8E8F905A80}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{F4A40A5F-C504-4024-8FBD-5AE04E847165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A40A5F-C504-4024-8FBD-5AE04E847165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4A40A5F-C504-4024-8FBD-5AE04E847165}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A40A5F-C504-4024-8FBD-5AE04E847165}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{F4A40A5F-C504-4024-8FBD-5AE04E847165}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A40A5F-C504-4024-8FBD-5AE04E847165}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
