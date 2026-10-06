@@ -7,8 +7,8 @@ public static class SkillCheckEngine
 {
     public static SkillCheckResult RollCheck(int skillValue, int bonusPenaltyDice = 0)
     {
-        int finalRoll = RollD100WithBonusPenalty(bonusPenaltyDice);
-        SuccessLevel level = EvaluateRoll(finalRoll, skillValue);
+        var finalRoll = RollD100WithBonusPenalty(bonusPenaltyDice);
+        var level = EvaluateRoll(finalRoll, skillValue);
         
         return new SkillCheckResult(
             RollValue: finalRoll,
@@ -21,18 +21,25 @@ public static class SkillCheckEngine
     public static SuccessLevel EvaluateRoll(int roll, int skillValue)
     {
 
-        bool isFumble = skillValue < 50 ? roll >= 96 : roll == 100;
+        var isFumble = skillValue < 50 ? roll >= 96 : roll == 100;
         if (isFumble) return SuccessLevel.Fumble;
 
         if (roll == 1) return SuccessLevel.Critical;
 
         if (roll > skillValue) return SuccessLevel.Failure;
 
-        int extremeTarget = skillValue / 5;
-        int hardTarget = skillValue / 2;
+        var extremeTarget = skillValue / 5;
+        var hardTarget = skillValue / 2;
         
         if (roll <= extremeTarget) return SuccessLevel.Extreme;
         return roll <= hardTarget ? SuccessLevel.Hard : SuccessLevel.Regular;
+    }
+
+    public static int ResolveBaseValue(SkillDefinition skill, int dexterity)
+    {
+        if (skill.DerivedAttribute == "DEX_DIV_2") return dexterity / 2;
+
+        return skill.BaseValue;
     }
 
     private static int RollD100WithBonusPenalty(int bonusPenaltyDice)

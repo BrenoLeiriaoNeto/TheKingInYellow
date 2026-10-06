@@ -1,0 +1,273 @@
+[
+  {
+    "id": "history",
+    "name": "História",
+    "baseValue": 1,
+    "category": "Acadêmica",
+    "description": "O estudo do modo de vida de grupos sociais e culturais. Pode ser usado para investigar comportamentos e costumes."
+  },
+  {
+    "id": "guns",
+    "name": "Armas de Fogo",
+    "baseValue": 15,
+    "category": "Ação",
+    "description": "Determina a sua perícia com armas de fogo no geral.",
+    "canBePushed": false
+  },
+  {
+    "id": "throw",
+    "name": "Arremessar",
+    "baseValue": 20,
+    "category": "Ação",
+    "description": "Acerte o seu alvo com algum item, arma de arremesso ou objeto. Distância de arremesso = FOR / 5 metros"
+  },
+  {
+    "id": "art_and_labor",
+    "name": "Arte e Ofício",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "Uma profissão que envolve a criação de obras artísticas ou a realização de tarefas manuais. Exemplos: pintura, decoração, falsificação, culinária, belas artes"
+  },
+  {
+    "id": "analysis",
+    "name": "Avaliação",
+    "baseValue": 1,
+    "category": "Investigação",
+    "description": "Usada para poder determinar o valor de um item ou objeto e detectar falsificações."
+  },
+  {
+    "id": "riding",
+    "name": "Cavalgar",
+    "baseValue": 5,
+    "category": "Ação",
+    "description": "Permite muntar animais (cavalos, mulas e burros), além de obter conhecimento básico sobre como cuidar deles"
+  },
+  {
+    "id": "charm",
+    "name": "Charme",
+    "baseValue": 15,
+    "category": "Social",
+    "description": "Seja através da beleza física, lisonja ou personalidade cativante, esta perícia pode ser usada para fazer o seu alvo agir de uma certa maneira."
+  },
+  {
+    "id": "lock_picking",
+    "name": "Chaveiro",
+    "baseValue": 1,
+    "category": "Ação",
+    "description": "Use esta perícia para abrir fechaduras, arrombar carros, fazer ligação direta, desarmar alarmes e armadilhas. Pode ser usada para consertar fechaduras."
+  },
+  {
+    "id": "cryptography",
+    "name": "Criptografia",
+    "baseValue": 1,
+    "category": "Acadêmica",
+    "description": "Um ramo dentro da matemática que se dedica à identificação, criação e decifração de mensagens e códigos."
+  },
+  {
+    "id": "electrical_repairs",
+    "name": "Consertos Elétricos",
+    "baseValue": 10,
+    "category": "Conhecimento",
+    "description": "Permite consertar e desmontar equipamentos elétricos. Você irá começar com um kit básico de ferramentas para tal."
+  },
+  {
+    "id": "mechanical_repairs",
+    "name": "Consertos Mecânicos",
+    "baseValue": 10,
+    "category": "Conhecimento",
+    "description": "Permite consertar e desmontar equipamentos mecânicos. Você irá começar com um kit básico de ferramentas para tal."
+  },
+  {
+    "id": "demolition",
+    "name": "Demolição",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "Permite o usos eguro de demolição, incluindo utilizar e neutralizar cargas explosivas. Você irá começar com um kit básico de ferramentas para tal."
+  },
+  {
+    "id": "driving",
+    "name": "Dirigir Automóveis",
+    "baseValue": 20,
+    "category": "Sobrevivência",
+    "description": "Permite dirigir automóveis de forma segura e eficiente no dia a dia. Você só irá usar esta perícia se quiser despitar ou perseguir um alvo."
+  },
+  {
+    "id": "disguise",
+    "name": "Disfarce",
+    "baseValue": 5,
+    "category": "Social",
+    "description": "Permite se passar por outra pessoa de forma mais crível, desde que esteja com vestes diferentes do comum."
+  },
+  {
+    "id": "find",
+    "name": "Encontrar",
+    "baseValue": 25,
+    "category": "Investigação",
+    "description": "Permite notar detalhes ocultos, pistas no ambiente, compartimentos secretos ou movimentos suspeitos."
+  },
+  {
+    "id": "climb",
+    "name": "Escalar",
+    "baseValue": 20,
+    "category": "Sobrevivência",
+    "description": "Permite escalar paredes, árvores ou outros obstáculos, com ou sem cordas e equipamento de escalada."
+  },
+  {
+    "id": "listen",
+    "name": "Escutar",
+    "baseValue": 20,
+    "category": "Investigação",
+    "description": "Permite escutar conversas próximas, ou ouvir sons em distâncias maiores."
+  },
+  {
+    "id": "dodge",
+    "name": "Esquivar",
+    "baseValue": 0,
+    "derivedAttribute": "DEX_DIV_2",
+    "category": "Ação",
+    "description": "Permite o esquivar-se de ataques inesperados ou de obstáculos.",
+    "canBePushed": false
+  },
+  {
+    "id": "stealth",
+    "name": "Furtividade",
+    "baseValue": 20,
+    "category": "Ação",
+    "description": "Permite mover-se sorrateiramente, se esconder, evitar ser notado ou detectado por outros personagens."
+  },
+  {
+    "id": "intimidation",
+    "name": "Intimidação",
+    "baseValue": 15,
+    "category": "Social",
+    "description": "Seja através de força física, ameaças ou manipulação psicológica, voce pode tentar obrigar o seu alvo a agir de determinada maneira."
+  },
+  {
+    "id": "silver_tongue",
+    "name": "Lábia",
+    "baseValue": 5,
+    "category": "Social",
+    "description": "Seja através de mentiras, truques verbais ou engodos, você pode tentar enganar/convencer alguém de realizar determinada ação."
+  },
+  {
+    "id": "fighting",
+    "name": "Lutar",
+    "baseValue": 25,
+    "category": "Ação",
+    "description": "Permite realizar ataques físicos desarmados ou com armas brancas e contra-atacar ataques corpo a corpo.",
+    "canBePushed": false
+  },
+  {
+    "id": "medicine",
+    "name": "Medicina",
+    "baseValue": 1,
+    "category": "Sobrevivência",
+    "description": "Permite o diagnóstico de ferimentos, doenças e curar pequenas feridas. OBS: Caso o alvo esteja morrendo, deve-se primeiro usar Primeiros Socorros e depois Medicina. Cura 1d3."
+  },
+  {
+    "id": "forbidden_lore",
+    "name": "Conhecimento Proibido",
+    "baseValue": 0,
+    "category": "Conhecimento",
+    "description": "Compreensão sobre Carcosa, geometria não-euclidiana e peças de teatro amaldiçoadas.",
+    "canBePushed": false
+  },
+  {
+    "id": "swimming",
+    "name": "Natação",
+    "baseValue": 20,
+    "category": "Sobrevivência",
+    "description": "Permite o usuário a nadar e boiar em plena segurança. Esta perícia só irá ser usada em caso de emergência ou perigo."
+  },
+  {
+    "id": "credit_level",
+    "name": "Nível de Crédito",
+    "baseValue": 0,
+    "category": "Sobrevivência",
+    "description": "Apenas uma medida do quão próspero é o personagem. Quanto maior, mais rico e com mais acesso a lugares VIP e itens."
+  },
+  {
+    "id": "occult",
+    "name": "Ocultismo",
+    "baseValue": 5,
+    "category": "Conhecimento",
+    "description": "Conhecimento sobre tradições exotéricas, grimórios clássicos, alquimia, sociedades secretas e rituais."
+  },
+  {
+    "id": "heavy_machinery",
+    "name": "Operar Maquinários Pesados",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "Permite o usuário operar retroescavadeiras, tanques ou outra maquina de construção de larga escala."
+  },
+  {
+    "id": "persuasion",
+    "name": "Persuasão",
+    "baseValue": 10,
+    "category": "Social",
+    "description": "A arte pura do convencimento. Usada quando se tem tempo para convencer alguém ou barganhar um preço melhor. Se quiser convencer mais rápido, use Lábia."
+  },
+  {
+    "id": "piloting",
+    "name": "Pilotar",
+    "baseValue": 1,
+    "category": "Sobrevivência",
+    "description": "Permite o usuário pilotar veículos aéreos ou navais com segurança. Em casos de perigos, perseguições ou tempestades, será necessário um teste."
+  },
+  {
+    "id": "sleight_of_hand",
+    "name": "Prestidigitação",
+    "baseValue": 10,
+    "category": "Ação",
+    "description": "Permite o usuário esconder ou disfarçar objetos."
+  },
+  {
+    "id": "first_aid",
+    "name": "Primeiros Socorros",
+    "baseValue": 30,
+    "category": "Sobrevivência",
+    "description": "Tratamento de emergência para estancar sangramentos, estabilizar ferimentos graves e curar 1 ponto de vida."
+  },
+  {
+    "id": "psychoanalysis",
+    "name": "Psicanálise",
+    "baseValue": 1,
+    "category": "Acadêmica",
+    "description": "Usado para acalmar crises de pânico, tratar traumas e estabilizar acessos de loucura temporária."
+  },
+  {
+    "id": "psychology",
+    "name": "Psicologia",
+    "baseValue": 10,
+    "category": "Social",
+    "description": "Capacidade de estudar o comportamento humano, detectar mentiras ou avaliar o estado mental de alguém."
+  },
+  {
+    "id": "track",
+    "name": "Rastrear",
+    "baseValue": 10,
+    "category": "Investigação",
+    "description": "Habilidade para seguir pessoas, veículos ou animais através do solo."
+  },
+  {
+    "id": "jump",
+    "name": "Saltar",
+    "baseValue": 20,
+    "category": "Ação",
+    "description": "A capacidade de pular de forma controlada e segura. Pode ser usado em quedas para diminuir o dano."
+  },
+  {
+    "id": "survival",
+    "name": "Sobrevivência",
+    "baseValue": 10,
+    "category": "Conhecimento",
+    "description": "A capacidade de sobreviver em ambientes hostis, como florestas, deserto ou montanhas."
+  },
+  {
+    "id": "library",
+    "name": "Usar Bibliotecas",
+    "baseValue": 20,
+    "category": "Conhecimento",
+    "description": "Usada para conseguir localizar informações em bibliotecas ou livros/arquivos antigos, desde que estes estejam no local."
+  }
+]

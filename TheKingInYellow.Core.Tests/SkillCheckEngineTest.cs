@@ -1,5 +1,6 @@
-using TheKingInYellow.Core.Domain.Enums;
+﻿using TheKingInYellow.Core.Domain.Enums;
 using TheKingInYellow.Core.Services;
+using Xunit;
 
 namespace TheKingInYellow.Core.Tests;
 
