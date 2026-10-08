@@ -26,7 +26,79 @@
     "name": "Arte e Ofício",
     "baseValue": 5,
     "category": "Acadêmica",
-    "description": "Uma profissão que envolve a criação de obras artísticas ou a realização de tarefas manuais. Exemplos: pintura, decoração, falsificação, culinária, belas artes"
+    "description": "Uma profissão que envolve a criação de obras artísticas ou a realização de tarefas manuais."
+  },
+  {
+    "id": "act",
+    "name": "Arte e Ofício (Atuação)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "Treinado em atuação teatral, maquiagens e roteiros",
+    "group": "art_and_labor"
+  },
+  {
+    "id": "painting",
+    "name": "Arte e Ofício (Belas Artes)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "Demonstra aptidão em pintura, além de esboços com vários tipos de materiais. Também concede conhecimento sobre o mundo da arte.",
+    "group": "art_and_labor"
+  },
+  {
+    "id": "falsification",
+    "name": "Arte e Ofício (Falsificação)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "Com um olhar preciso, permite a produção de documentos falsos de boa qualidade (precisa de materiais adequados).",
+    "group": "art_and_labor"
+  },
+  {
+    "id": "photography",
+    "name": "Arte e Ofício (Fotografia)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "Capacidade de capturar e revelar imagens claras, incluindo fotos de cenas de crime.",
+    "group": "art_and_labor"
+  },
+  {
+    "id": "agriculture",
+    "name": "Arte e Ofício (Agricultura)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "Capacidade de cultivar e gerir plantações, além de obter conhecimento básico sobre fazendas, arado, e outros instrumentos agrícolas.",
+    "group": "art_and_labor"
+  },
+  {
+    "id": "technical_drawing",
+    "name": "Arte e Ofício (Desenho Técnico)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "",
+    "group": "art_and_labor"
+  },
+  {
+    "id": "music",
+    "name": "Arte e Ofício (Instrumento)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "Concede proeficiência em um instrumento musical específico.",
+    "group": "art_and_labor"
+  },
+  {
+    "id": "typing",
+    "name": "Arte e Ofício (Datilografia)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "A arte e técnica de digitar com rapidez e precisão usando máquinas de escrever ou teclados.",
+    "group": "art_and_labor"
+  },
+  {
+    "id": "stenography",
+    "name": "Arte e Ofício (Taquigrafia)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "Uma arte de escrita abreviada que usa símbolos baseados em sons (fonemas) para acompanhar a velocidade de fala humana.",
+    "group": "art_and_labor"
   },
   {
     "id": "analysis",
@@ -57,6 +129,14 @@
     "description": "Use esta perícia para abrir fechaduras, arrombar carros, fazer ligação direta, desarmar alarmes e armadilhas. Pode ser usada para consertar fechaduras."
   },
   {
+    "id": "forbidden_lore",
+    "name": "Conhecimento Proibido",
+    "baseValue": 0,
+    "category": "Conhecimento",
+    "description": "Compreensão sobre Carcosa, geometria não-euclidiana e peças de teatro amaldiçoadas.",
+    "canBePushed": false
+  },
+  {
     "id": "cryptography",
     "name": "Criptografia",
     "baseValue": 1,
@@ -78,11 +158,25 @@
     "description": "Permite consertar e desmontar equipamentos mecânicos. Você irá começar com um kit básico de ferramentas para tal."
   },
   {
+    "id": "accounting",
+    "name": "Contabilidade",
+    "baseValue": 5,
+    "category": "Conhecimento",
+    "description": "Concede o conhecimento do funcionamento financeiro de empresas, organizações e pessoas, além da compreensão dos procedimentos contábeis."
+  },
+  {
     "id": "demolition",
     "name": "Demolição",
     "baseValue": 1,
     "category": "Conhecimento",
     "description": "Permite o usos eguro de demolição, incluindo utilizar e neutralizar cargas explosivas. Você irá começar com um kit básico de ferramentas para tal."
+  },
+  {
+    "id": "law",
+    "name": "Direito",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "Representa o conhecimento de leis, processos judiciais, precedentes, jurisprudência e manobras legais."
   },
   {
     "id": "driving",
@@ -136,6 +230,45 @@
     "description": "Permite mover-se sorrateiramente, se esconder, evitar ser notado ou detectado por outros personagens."
   },
   {
+    "id": "languages",
+    "name": "Idiomas",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "Demonstra a capacidade de se comunicar em diferentes línguas. Níveis de entendimento variam de acordo com o nível de conhecimento em cada língua: com 5% voce consegue identificar uma lingua estrangeira. Com 10% você consegue entender ideias simples. Com 30% é possível fazer tarefas básicas do dia a dia. Com 50% é considerado fluente. Com 75% ou mais, você pode se passar por um nativo."
+  },
+  {
+    "id": "english",
+    "name": "Inglês",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "Voce consegue comunicar-se em inglês.",
+    "group": "languages"
+  },
+  {
+    "id": "german",
+    "name": "Alemão",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "Voce consegue comunicar-se em alemão.",
+    "group": "languages"
+  },
+  {
+    "id": "french",
+    "name": "Francês",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "Voce consegue comunicar-se em francês.",
+    "group": "languages"
+  },
+  {
+    "id": "latim",
+    "name": "Latim",
+    "baseValue": 5,
+    "category": "Conhecimento",
+    "description": "Voce consegue comunicar-se em latim.",
+    "group": "languages"
+  },
+  {
     "id": "intimidation",
     "name": "Intimidação",
     "baseValue": 15,
@@ -165,12 +298,11 @@
     "description": "Permite o diagnóstico de ferimentos, doenças e curar pequenas feridas. OBS: Caso o alvo esteja morrendo, deve-se primeiro usar Primeiros Socorros e depois Medicina. Cura 1d3."
   },
   {
-    "id": "forbidden_lore",
-    "name": "Conhecimento Proibido",
-    "baseValue": 0,
+    "id": "natural_world",
+    "name": "Mundo Natural",
+    "baseValue": 10,
     "category": "Conhecimento",
-    "description": "Compreensão sobre Carcosa, geometria não-euclidiana e peças de teatro amaldiçoadas.",
-    "canBePushed": false
+    "description": "O estudo básico (não científico) de plantas, animais e outros seres vivos em seus ambientes."
   },
   {
     "id": "swimming",
@@ -178,6 +310,13 @@
     "baseValue": 20,
     "category": "Sobrevivência",
     "description": "Permite o usuário a nadar e boiar em plena segurança. Esta perícia só irá ser usada em caso de emergência ou perigo."
+  },
+  {
+    "id": "navigation",
+    "name": "Navegação",
+    "baseValue": 10,
+    "category": "Sobrevivência",
+    "description": "Concede a habilidade de orientar-se em ambientes desconhecidos, usando mapas, estrelas, ventos e outros recursos naturais."
   },
   {
     "id": "credit_level",

@@ -10,6 +10,7 @@
     <Folder Include="Bridge\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\occupations.json" />
     <Content Include="data\skills.json" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,702 @@
+[
+  {
+    "id": "federal_agent",
+    "name": "Agente Federal",
+    "description": "Seja uniformizado ou a paisana, você é um agente federal dedicado à proteção da segurança nacional e da ordem pública. Com uma combinação de habilidades técnicas e estratégicas, você é responsável por investigar e prender criminosos, resolver casos complexos e manter a paz em áreas críticas. Seu trabalho exige uma alta capacidade de análise, comunicação e trabalho em equipe.",
+    "creditRatingMin": 20,
+    "creditRatingMax": 40,
+    "formula": {
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "guns",
+      "law",
+      "driving",
+      "find",
+      "stealth",
+      "fighting",
+      "persuasion",
+      "ANY"
+    ],
+    "suggestedContacts": [
+      "Agências federais",
+      "Policiais",
+      "Crime organizado"
+    ]
+  },
+  {
+    "id": "undertaker",
+    "name": "Agente Funerário",
+    "description": "",
+    "creditRatingMin": 20,
+    "creditRatingMax": 40,
+    "formula": {
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "description": "",
+    "creditRatingMin": 0,
+    "creditRatingMax": 0,
+    "formula": {
+      "primaryAttr": "",
+      "primaryMultiplier": 0,
+      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "secondaryMultiplier": 0
+    },
+    "skillIds": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "suggestedContacts": [
+      "",
+      "",
+      ""
+    ]
+  }
+]
