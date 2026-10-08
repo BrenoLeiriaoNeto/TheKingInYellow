@@ -1,0 +1,35 @@
+name: Release - Godot Matrix Export
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Dispara apenas com tags no formato v1.0.0, v0.1.0, etc.
+
+jobs:
+  export-matrix:
+    name: 📦 Export Build (${{ matrix.platform }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [windows, linux, web]
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Godot Export
+        uses: firebelley/godot-export@v6.0.0
+        with:
+          godot_version: '4.7.2' # Ajuste para a versão exata do seu Godot 4.x
+          export_debug: true
+          relative_project_path: './' # Ajuste se o projeto do Godot estiver em uma subpasta
+          archive_output: true
+
+      - name: Anexar Build ao Release do GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            build/${{ matrix.platform }}/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

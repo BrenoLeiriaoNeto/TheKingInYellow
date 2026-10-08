@@ -1,0 +1,67 @@
+name: CI - Core Quality & Data Validation
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
+
+jobs:
+  validate-json:
+    name: 🔍 Validação de Arquivos JSON
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validar sintaxe de todos os arquivos JSON
+        run: |
+          python3 -c "
+          import json, glob, sys
+          # Procura todos os arquivos JSON do projeto
+          json_files = glob.glob('**/*.json', recursive=True)
+          # Filtra pastas de build ou IDE
+          target_files = [f for f in json_files if not any(x in f for x in ['.idea', '.vscode', 'bin/', 'obj/', '.godot/'])]
+          
+          errors = 0
+          for file_path in target_files:
+              try:
+                  with open(file_path, 'r', encoding='utf-8') as f:
+                      json.load(f)
+                  print(f'✅ {file_path} está válido.')
+              except Exception as e:
+                  print(f'❌ Erro no arquivo {file_path}: {e}', file=sys.stderr)
+                  errors += 1
+          
+          if errors > 0:
+              sys.exit(1)
+          "
+
+  csharp-quality:
+    name: 🛡️ Linters & Testes xUnit (.NET 8)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restaurar Pacotes NuGet
+        run: dotnet restore
+
+      - name: Checar Formatação de Código (dotnet format)
+        run: dotnet format --verify-no-changes --verbosity diagnostic
+
+      - name: Compilar Solução (Tratar Warnings como Erros)
+        run: dotnet build --configuration Release --no-restore /p:TreatWarningsAsErrors=true
+
+      - name: Executar Testes Unitários (xUnit)
+        run: dotnet test --configuration Release --no-build --verbosity normal
