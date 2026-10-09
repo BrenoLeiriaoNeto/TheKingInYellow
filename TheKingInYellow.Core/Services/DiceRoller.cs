@@ -56,7 +56,7 @@ public static class DiceRoller
         var total = sum + modifier;
         return new DiceRollResult(total, rolls, count, sides, modifier);
     }
-    
+
     /// <summary>
     /// Rola um dado de 4 lados (d4).
     /// </summary>

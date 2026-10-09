@@ -19,7 +19,7 @@ public static class SkillCheckEngine
     {
         var finalRoll = RollD100WithBonusPenalty(bonusPenaltyDice);
         var level = EvaluateRoll(finalRoll, skillValue);
-        
+
         return new SkillCheckResult(
             RollValue: finalRoll,
             TargetValue: skillValue,
@@ -45,7 +45,7 @@ public static class SkillCheckEngine
 
         var extremeTarget = skillValue / 5;
         var hardTarget = skillValue / 2;
-        
+
         if (roll <= extremeTarget) return SuccessLevel.Extreme;
         return roll <= hardTarget ? SuccessLevel.Hard : SuccessLevel.Regular;
     }
@@ -80,7 +80,7 @@ public static class SkillCheckEngine
         {
             tensRolls[i] = Random.Shared.Next(0, 10) * 10;
         }
-        
+
         var chosenTens = bonusPenaltyDice > 0 ? tensRolls.Min() : tensRolls.Max();
         var total = chosenTens + unitDigit;
 

@@ -46,7 +46,7 @@ public static class OccupationSlotResolver
             var options = skillIdToken["CHOICE:".Length..].Split('|');
             return options;
         }
-        
+
         if (skillIdToken == "ANY")
         {
             return allSkillDefinitions.Select(s => s.Id).ToList();

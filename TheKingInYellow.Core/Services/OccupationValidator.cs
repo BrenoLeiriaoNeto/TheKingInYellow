@@ -21,13 +21,13 @@ public static class OccupationValidator
         IReadOnlyList<string> chosenSkillIds,
         IReadOnlyList<SkillDefinition> allSkillDefinitions)
     {
-        if (chosenSkillIds.Count != 8 || chosenSkillIds.Distinct().Count() != 8) 
+        if (chosenSkillIds.Count != 8 || chosenSkillIds.Distinct().Count() != 8)
             return false;
 
         var skillsMap = allSkillDefinitions.ToDictionary(s => s.Id);
         var remainingSlots = occupation.SkillIds.ToList();
         var unassignedChosen = chosenSkillIds.ToList();
-        
+
         for (var i = unassignedChosen.Count - 1; i >= 0; i--)
         {
             var chosenId = unassignedChosen[i];
@@ -46,7 +46,7 @@ public static class OccupationValidator
                 token["CHOICE:".Length..].Split('|').Contains(chosenId));
 
             if (matchingChoiceToken == null) continue;
-            
+
             remainingSlots.Remove(matchingChoiceToken);
             unassignedChosen.RemoveAt(i);
         }
@@ -54,7 +54,7 @@ public static class OccupationValidator
         for (var i = unassignedChosen.Count - 1; i >= 0; i--)
         {
             var chosenId = unassignedChosen[i];
-            if (!skillsMap.TryGetValue(chosenId, out var skillDef) || skillDef.Group == null) 
+            if (!skillsMap.TryGetValue(chosenId, out var skillDef) || skillDef.Group == null)
                 continue;
 
             var matchingToken = remainingSlots.FirstOrDefault(token =>

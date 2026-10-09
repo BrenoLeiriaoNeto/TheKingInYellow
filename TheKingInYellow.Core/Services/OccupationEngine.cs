@@ -47,7 +47,7 @@ public static class OccupationEngine
                 .OrderByDescending(attr => attributes.GetValueOrDefault(attr, 0))
                 .First();
         }
-            
+
         var secondaryVal = attributes.GetValueOrDefault(selectedAttr, 0);
         totalPoints += secondaryVal * occupation.Formula.SecondaryMultiplier;
 
