@@ -129,19 +129,115 @@
     "description": "Use esta perícia para abrir fechaduras, arrombar carros, fazer ligação direta, desarmar alarmes e armadilhas. Pode ser usada para consertar fechaduras."
   },
   {
+    "id": "science",
+    "name": "Ciências",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "A junção da prática e teoria de conhecimentos científicos específicos."
+  },
+  {
+    "id": "astronomy",
+    "name": "Astronomia",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento das estrelas e dos planetas. O conhecimento de astronomia pode ser usado para calcular a posição de objetos celestes, prever eventos astronômicos e entender fenômenos como eclipses e meteoros.",
+    "group": "science"
+  },
+  {
+    "id": "biology",
+    "name": "Biologia",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento das formas de vida e suas relações com o ambiente. Permite criar vacinas e remédios contra bactérias e enfermidades.",
+    "group": "science"
+  },
+  {
+    "id": "botany",
+    "name": "Botânica",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento das plantas, seus processos evolutivos, propriedades químicas e doenças. É possível detectar se uma planta é venenosa com esta perícia.",
+    "group": "science"
+  },
+  {
+    "id": "encryption",
+    "name": "Criptografia",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "Um ramo dentro da matemática que se dedica à identificação, criação e decifração de mensagens e códigos. PS: Usar esta perícia irá consumir tempo baseado na habilidade do personagem.",
+    "group": "science"
+  },
+  {
+    "id": "forensics",
+    "name": "Forense",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "A perícia forense é capaz de identificar e analisar evidências encontradas no local do crime. É possível identificar armas, rastros de sangue, materiais usados em crimes e outras informações relevantes para a investigação.",
+    "group": "science"
+  },
+  {
+    "id": "pharmacy",
+    "name": "Farmácia",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento de químicos e seus efeitos em organismos vivos. Esta perícia garante o uso seguro de medicamentos e de identificação de venenos e toxinas.",
+    "group": "science"
+  },
+  {
+    "id": "physics",
+    "name": "Física",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento sobre fenômenos físicos, suas leis e suas aplicações.",
+    "group": "science"
+  },
+  {
+    "id": "geology",
+    "name": "Geologia",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento sobre rochas, fenômenos geológicos, fósseis, minerais, cristais, solos e vulcanismo.",
+    "group": "science"
+  },
+  {
+    "id": "math",
+    "name": "Matemática",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento geral sobre números e lógica. Esta perícia ajuda na resolução de fórmulas enigmáticas e problemas relacionados. Para códigos e afins, veja a perícia Criptografia.",
+    "group": "science"
+  },
+  {
+    "id": "meteorology",
+    "name": "Meteorologia",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento sobre o clima, fenômenos atmosféricos e previsões meteorológicas.",
+    "group": "science"
+  },
+  {
+    "id": "chemistry",
+    "name": "Química",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento geral sobre substâncias químicas, reações químicas e suas propriedades. Use esta perícia para criar ou extrair compostos químicos mais complexos.",
+    "group": "science"
+  },
+  {
+    "id": "zoology",
+    "name": "Zoologia",
+    "baseValue": 1,
+    "category": "Conhecimento",
+    "description": "O conhecimento geral sobre animais, suas características e comportamentos. Use esta perícia para entender e interagir com diferentes espécies.",
+    "group": "science"
+  },
+  {
     "id": "forbidden_lore",
     "name": "Conhecimento Proibido",
     "baseValue": 0,
     "category": "Conhecimento",
     "description": "Compreensão sobre Carcosa, geometria não-euclidiana e peças de teatro amaldiçoadas.",
     "canBePushed": false
-  },
-  {
-    "id": "cryptography",
-    "name": "Criptografia",
-    "baseValue": 1,
-    "category": "Acadêmica",
-    "description": "Um ramo dentro da matemática que se dedica à identificação, criação e decifração de mensagens e códigos."
   },
   {
     "id": "electrical_repairs",
