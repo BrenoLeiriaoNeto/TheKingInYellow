@@ -40,579 +40,576 @@
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "driving",
+      "history",
+      "occult",
+      "psychology",
+      "biology",
+      "chemistry",
+      "CHOICE_INTERPERSONAL"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Poucos"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "farmer",
+    "name": "Agricultor",
+    "description": "Um trabalhador que cuida de plantações e animais para produzir alimentos e fibras. Pode possuir uma terra própria onde trabalha ou pode ser contratado para trabalhar em fazendas de outros agricultores.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
       "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "agriculture",
+      "mechanical_repairs",
+      "driving",
+      "natural_world",
+      "heavy_machinery",
+      "track",
+      "CHOICE_INTERPERSONAL",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Banco local",
+      "Políticos locais",
+      "Departamento agrícola estadual"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "mountaineer",
+    "name": "Alpinista",
+    "description": "Seja por esporte, recreação ou profissão, um alpinista é alguém que pratica a escalada de montanhas. Pode ser necessário enfrentar condições extremas, como alta altitudes, condições climáticas adversas e ambientes desafiadores.",
+    "creditRatingMin":30,
+    "creditRatingMax": 60,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
       "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "climb",
+      "listen",
+      "navigation",
+      "first_aid",
+      "track",
+      "jump",
+      "survival",
+      "CHOICE_LANGUAGES"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Patrocinadores",
+      "Clubes esportivos",
+      "Guardas florestais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
+    "id": "wanderer",
+    "name": "Andarilho",
+    "description": "Esta profissão abranje qualquer pessoa que se dedique à exploração de territórios desconhecidos, seja por motivo de trabalho, aventura ou simplesmente por curiosidade. Inclui exploradores, guias turísticos, pesquisadores, jornalistas e até mesmo vagabundos.",
     "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "creditRatingMax": 5,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
+      "secondaryChoiceAttrs": ["APA", "DEX", "STR"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "climb",
+      "listen",
+      "stealth",
+      "navigation",
+      "jump",
+      "CHOICE_INTERPERSONAL",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Outros andarilhos",
+      "Guardas ferroviários amigáveis",
+      "Pessoas de coração mole"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "animator",
+    "name": "Animador",
+    "description": "Profissão que envolve criar e executar shows, filmes, animações e outras formas de entretenimento. Inclui diretores, roteiristas, ilustradores, animadores digitais, e até mesmo apresentadores de programas de TV.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 70,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
+      "secondaryChoiceAttrs": ["APA"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "disguise",
+      "listen",
+      "psychology",
+      "CHOICE_ART_AND_LABOR",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Teatro",
+      "Indústria cinematográfica",
+      "Crime organizado"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "antique_dealer",
+    "name": "Antiquário",
+    "description": "Profissão que envolve a compra, venda e restauração de objetos antigos e raros. Inclui pesquisadores, colecionadores, restauradores e até mesmo vendedores de itens antigos.",
+    "creditRatingMin": 30,
+    "creditRatingMax": 70,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "analysis",
+      "find",
+      "history",
+      "library",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_LANGUAGES",
+      "CHOICE_ART_AND_LABOR",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Livreiros",
+      "Colecionadores de antiguidades",
+      "Sociedades históricas"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "gambler",
+    "name": "Apostador",
+    "description": "Seja em cassinos, vielas com dados viciados, sinuca de cartas, ou qualquer outro meio de apostas, o apostador é alguém que busca ganhos através de suas habilidades de previsão, estratégia......e muita SORTE.",
+    "creditRatingMin": 8,
+    "creditRatingMax": 50,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
+      "secondaryChoiceAttrs": ["DEX", "APA"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "find",
+      "listen",
+      "sleight_of_hand",
+      "psychology",
+      "act",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Agenciadores",
+      "Crime organizado",
+      "Cotidiano urbano"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "archaeologist",
+    "name": "Arqueólogo",
+    "description": "O estudo e a exploração dos restos de culturas passadas. Arqueólogos são pessoas que têm um grande interesse em descobrir e entender o passado humano, através da análise de objetos, documentos e restos arqueológicos. Eles podem trabalhar em museus, universidades, institutos de pesquisa ou em projetos de exploração arqueológica.",
+    "creditRatingMin": 10,
+    "creditRatingMax": 40,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "history",
+      "analysis",
+      "mechanical_repairs",
+      "find",
+      "library",
+      "navigation",
+      "CHOICE_SCIENCE",
+      "CHOICE_LANGUAGES"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Patronos",
+      "Museus",
+      "Universidades"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "architect",
+    "name": "Arquiteto",
+    "description": "O estudo e a criação de projetos de edifícios e estruturas. Arquitetos são pessoas que têm um grande interesse em projetar e construir espaços habitáveis e funcionais, considerando fatores como estética, funcionalidade, segurança e sustentabilidade. Eles podem trabalhar em empresas de arquitetura, em consultorias ou em projetos de construção.",
+    "creditRatingMin": 30,
+    "creditRatingMax": 70,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "technical_drawing",
+      "math",
+      "accounting",
+      "law",
+      "persuasion",
+      "psychology",
+      "library",
+      "CHOICE_LANGUAGES"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Departamentos locais de engenharia",
+      "Empresas de construção",
+      "Empreiteiras"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "craftsman",
+    "name": "Artesão",
+    "description": "Também conhecido como artífice, é um profissional que realiza trabalhos manuais e artesanais, como a fabricação de objetos, reparos mecânicos e outras atividades relacionadas à criação de produtos.",
+    "creditRatingMin": 10,
+    "creditRatingMax": 40,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
+      "secondaryChoiceAttrs": ["DEX"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "mechanical_repairs",
+      "accounting",
+      "find",
+      "natural_world",
+      "CHOICE_ART_AND_LABOR",
+      "CHOICE_ART_AND_LABOR",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Empresários locais",
+      "Artistas",
+      "Outros artesões"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "athlete",
+    "name": "Atleta",
+    "description": "Você é um jogador profissional de algum time de basquete, baseball, futebol ou esportes solo.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 70,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
       "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "throw",
+      "riding",
+      "climb",
+      "fighting",
+      "swimming",
+      "jump",
+      "CHOICE_INTERPERSONAL",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Personalidades do esporte",
+      "Jornalistas de esporte",
+      "Estrelas da mídia"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "artist",
+    "name": "Artista",
+    "description": "Seja focado em sua própria visão ou abençoado com um grande talento, o Artista precisa ter um ego muito grande para lidar com a pressão e a crítica, principalmente em início de carreira.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 50,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
+      "secondaryChoiceAttrs": ["DEX", "POW"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "find",
+      "psychology",
+      "CHOICE:history|natural_world",
+      "CHOICE_ART_AND_LABOR",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_LANGUAGES",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Galerias de arte",
+      "Setor de publicidade",
+      "Críticos"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "actor",
+    "name": "Ator",
+    "description": "Um profissional da atuação cinematográfica ou teatral. Atores atraem atenção por onde passam, mas também podem ser prejudicados por isso.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 40,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
+      "secondaryChoiceAttrs": ["APA"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "disguise",
+      "fighting",
+      "history",
+      "psychology",
+      "act",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Indústria teatral",
+      "Críticos de artes",
+      "Sindicato de atores"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "bartender",
+    "name": "Bartender",
+    "description": "Normalmente não é quem comanda o bar, mas sim aquele que serve as bebidas e escuta todo tipo de confissão ou ladainha dos clientes. PS: Esta profissão esta atualmente banida pela Lei Seca, mas sempre há necessidade de alguém servir bebidas em bares clandestinos e encontros secretos.",
+    "creditRatingMin": 8,
+    "creditRatingMax": 25,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
+      "secondaryChoiceAttrs": ["APA"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "find",
+      "listen",
+      "fighting",
+      "psychology",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Clientes regulares",
+      "Crime organizado"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "librarian",
+    "name": "Bibliotecário",
+    "description": "Seja através do trabalho para uma instituição pública ou universidade, o bibliotecário é responsável por organizar e manter os livros e outros materiais em uma biblioteca. Se derem sorte, podem ser contratados para manter uma biblioteca de algum colecionador podre de rico.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 35,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "library",
+      "CHOICE_LANGUAGES",
+      "CHOICE_LANGUAGES",
+      "ANY",
+      "ANY",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Livreiros",
+      "Grupos comunitários",
+      "Pesquisadores"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "fireman",
+    "name": "Bombeiro",
+    "description": "Trabalhando 24 horas por dia, o bombeiro é responsável por resgatar pessoas em situações de emergência, como incêndios, acidentes e desastres naturais. Eles também são responsáveis por manter os equipamentos de proteção pessoal e os veículos de resgate em condições de uso.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
       "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "throw",
+      "mechanical_repairs",
+      "driving",
+      "climb",
+      "dodge",
+      "heavy_machinery",
+      "first_aid",
+      "jump"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Funcionários públicos",
+      "Médicos locais",
+      "Policiais locais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "bounty_hunter",
+    "name": "Caçador de Recompensas",
+    "description": "O caçador de recompensas é um profissional especializado em localizar e capturar criminosos em troca de recompensas financeiras. Eles são responsáveis por investigar casos, rastrear suspeitos e realizar capturas. O caçador de recompensas precisa ser astuto, rápido e habilidoso em combate, pois muitas vezes enfrenta situações perigosas.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
       "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "law",
+      "driving",
+      "stealth",
+      "psychology",
+      "track",
+      "electrical_repairs",
+      "CHOICE:fighting|guns",
+      "CHOICE_INTERPERSONAL"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Fiadores",
+      "Polícia local",
+      "Informantes"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "noble",
+    "name": "Cavalheiro/Dama",
+    "description": "Um homem ou mulher de alta classe social, com acesso a ótima educação, comportamento refinado e boa conduta. Você terá um criado e uma residência rural e urbana com essa ocupação.",
+    "creditRatingMin": 40,
+    "creditRatingMax": 90,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 2,
+      "secondaryChoiceAttrs": ["APA"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "guns",
+      "riding",
+      "history",
+      "navigation",
+      "CHOICE_ART_AND_LABOR",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_LANGUAGES"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Classe alta e nobreza rural",
+      "Políticos",
+      "Empregados e funcionários rurais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "scientist",
+    "name": "Cientista",
+    "description": "Um cientista é uma pessoa que realiza pesquisas científicas e experimentos para expandir o conhecimento humano. Eles podem trabalhar em laboratórios, universidades, empresas ou instituições governamentais.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 50,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "find",
+      "library",
+      "CHOICE_SCIENCE",
+      "CHOICE_SCIENCE",
+      "CHOICE_SCIENCE",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_LANGUAGES",
+      "CHOICE_LANGUAGES"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Universidades",
+      "Acadêmicos",
+      "Empregadores"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "clergy",
+    "name": "Clérigo",
+    "description": "Um trabalhador da igreja que também possui conhecimento mundano e treinamento em habilidades a nível profissional, como liderança, comunicação e conhecimento de religião.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 60,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "listen",
+      "history",
+      "psychology",
+      "library",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_LANGUAGES",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Hierarquia da igreja",
+      "Congregações locais",
+      "Líderes comunitários"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "accountant",
+    "name": "Contador",
+    "description": "Um profissional que gerencia e avalia finanças pessoais e corporativas, incluindo a preparação de relatórios financeiros, auditoria e consultoria.",
+    "creditRatingMin": 30,
+    "creditRatingMax": 70,
     "formula": {
-      "primaryAttr": "",
-      "primaryMultiplier": 0,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryAttr": "EDU",
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "law",
+      "find",
+      "listen",
+      "persuasion",
+      "library",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Associados comerciais",
+      "Profissionais jurídicos",
+      "Setor financeiro"
     ]
   },
   {
