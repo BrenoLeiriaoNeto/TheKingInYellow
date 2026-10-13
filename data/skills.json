@@ -101,6 +101,14 @@
     "group": "art_and_labor"
   },
   {
+    "id": "literature",
+    "name": "Arte e Ofício (Literatura)",
+    "baseValue": 5,
+    "category": "Acadêmica",
+    "description": "A arte da escrita em sua forma mais nua e crua.",
+    "group": "art_and_labor"
+  },
+  {
     "id": "analysis",
     "name": "Avaliação",
     "baseValue": 1,
