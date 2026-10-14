@@ -11,6 +11,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\occupations.json" />
+    <Content Include="data\occupations.schema.json" />
     <Content Include="data\skills.json" />
   </ItemGroup>
 </Project>

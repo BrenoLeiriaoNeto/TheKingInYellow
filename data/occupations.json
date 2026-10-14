@@ -1,5 +1,6 @@
 [
   {
+    "$schema": "./occupations.schema.json",
     "id": "federal_agent",
     "name": "Agente Federal",
     "description": "Seja uniformizado ou a paisana, você é um agente federal dedicado à proteção da segurança nacional e da ordem pública. Com uma combinação de habilidades técnicas e estratégicas, você é responsável por investigar e prender criminosos, resolver casos complexos e manter a paz em áreas críticas. Seu trabalho exige uma alta capacidade de análise, comunicação e trabalho em equipe.",
@@ -118,7 +119,7 @@
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["APA", "DEX", "STR"],
+      "secondaryChoiceAttrs": ["APP", "DEX", "STR"],
       "secondaryMultiplier": 2
     },
     "skillIds": [
@@ -146,7 +147,7 @@
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["APA"],
+      "secondaryChoiceAttrs": ["APP"],
       "secondaryMultiplier": 2
     },
     "skillIds": [
@@ -202,7 +203,7 @@
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "APA"],
+      "secondaryChoiceAttrs": ["DEX", "APP"],
       "secondaryMultiplier": 2
     },
     "skillIds": [
@@ -370,7 +371,7 @@
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["APA"],
+      "secondaryChoiceAttrs": ["APP"],
       "secondaryMultiplier": 2
     },
     "skillIds": [
@@ -398,7 +399,7 @@
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["APA"],
+      "secondaryChoiceAttrs": ["APP"],
       "secondaryMultiplier": 2
     },
     "skillIds": [
@@ -509,7 +510,7 @@
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["APA"],
+      "secondaryChoiceAttrs": ["APP"],
       "secondaryMultiplier": 2
     },
     "skillIds": [
@@ -649,7 +650,7 @@
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "APA"],
+      "secondaryChoiceAttrs": ["DEX", "APP"],
       "secondaryMultiplier": 2
     },
     "skillIds": [
@@ -789,7 +790,7 @@
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["APA"],
+      "secondaryChoiceAttrs": ["APP"],
       "secondaryMultiplier": 2
     },
     "skillIds": [
@@ -929,7 +930,7 @@
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "APA"],
+      "secondaryChoiceAttrs": ["DEX", "APP"],
       "secondaryMultiplier": 2
     },
     "skillIds": [
@@ -949,263 +950,263 @@
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "student",
+    "name": "Estudante",
+    "description": "Você é uma pessoa interessada em aprender e crescer, buscando conhecimento e desenvolvimento pessoal através de estudos e atividades acadêmicas.",
+    "creditRatingMin": 5,
+    "creditRatingMax": 10,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "listen",
+      "library",
+      "CHOICE_LANGUAGES",
+      "CHOICE_SCIENCE",
+      "CHOICE_SCIENCE",
+      "CHOICE_SCIENCE",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Acadêmicos",
+      "Outros estudantes",
+      "Professores"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "explorer",
+    "name": "Explorador",
+    "description": "Você é uma pessoa curiosa e empenhada em descobrir novos lugares e conhecimentos, buscando aventuras e desafios em busca de novas experiências e aprendizados.",
+    "creditRatingMin": 55,
+    "creditRatingMax": 80,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryChoiceAttrs": ["DEX", "STR", "APP"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "guns",
+      "history",
+      "natural_world",
+      "navigation",
+      "jump",
+      "survival",
+      "CHOICE_LANGUAGES",
+      "CHOICE:climb|swimming"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Grandes bibliotecas",
+      "Universidades e Museus",
+      "Patronos ricos"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "pharmaceutical",
+    "name": "Farmacêutco",
+    "description": "Uma profissão mais regulamentada do que a dos médicos, mas com uma ampla gama de habilidades e conhecimentos necessários para desenvolver, testar e produzir medicamentos eficazes e seguros. Podem ser empregados de um hospital ou donos do próprio negócio.",
+    "creditRatingMin": 35,
+    "creditRatingMax": 75,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "chemistry",
+      "pharmacy",
+      "accounting",
+      "psychology",
+      "first_aid",
+      "library",
+      "latin",
+      "CHOICE_INTERPERSONAL"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Comunidade local",
+      "Médicos locais",
+      "Acesso a todo tipo de produtos químicos e drogas"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "photographer",
+    "name": "Fotógrafo",
+    "description": "Seja trabalhando para uma empresa de arte, publicidade, estúdio de retratos ou de forma autônoma, um fotógrafo precisa ter habilidades técnicas e criativas para capturar imagens que sejam verdadeiras e emocionantes. Além disso, é importante ter uma boa comunicação e relacionamento interpessoal para trabalhar com clientes e equipes.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "photography",
+      "chemistry",
+      "find",
+      "stealth",
+      "psychology",
+      "CHOICE_INTERPERSONAL",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Indústria de publicidade",
+      "Clientes locais",
+      "Organizações políticas"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "waiter",
+    "name": "Garçom/Garçonete",
+    "description": "Normalmente mal pagos e com pouco espaço para crescer na carreira, garçons geralmente precisam da gorjeta dos clientes e alguns arriscam até o trabalho clandestino em bares da máfia, por conta da Lei Seca dos EUA de 1920 até 1933.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 20,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryChoiceAttrs": ["DEX", "APP"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "listen",
+      "dodge",
+      "psychology",
+      "CHOICE_ART_AND_LABOR",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Clientes",
+      "Crime organizado",
+      "Restaurantes locais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "journalist",
+    "name": "Jornalista Investigativo",
+    "description": "Usam do poder das palavras para investigar e trazer a verdade para a luz do dia, escrevendo tantas palavras em um único dia, quanto um escritor em uma semana. Jornalistas investigativos não medem pudor ao relatarem seus achados nos jornais, normalmente empregando palavriado forte e direto.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "history",
+      "psychology",
+      "library",
+      "CHOICE:literature|photography",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_LANGUAGES",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Indústria de notícias",
+      "Políticos",
+      "Forças policiais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "jurist",
+    "name": "Jurista",
+    "description": "Você é bem versado e estudado na legislação do estado onde atua. Normalmente contratado por um tribunal ou agindo de forma privada para um cliente rico, um Jurista age como uma espécie de advogado e/ou executivo legal.",
+    "creditRatingMin": 30,
+    "creditRatingMax": 80,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "law",
+      "psychology",
+      "library",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Crime organizado",
+      "Financiadores",
+      "Procuradores e juízes distritais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "coroner",
+    "name": "Legista",
+    "description": "Você é um profissional altamente capacitado na realização de autópsias e na determinação das causas de morte. Frequentemente são chamados para testemunhar em processos criminais.",
+    "creditRatingMin": 40,
+    "creditRatingMax": 60,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "biology",
+      "pharmacy",
+      "forensics",
+      "find",
+      "medicine",
+      "persuasion",
+      "library",
+      "latin"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Laboratórios",
+      "Autoridades policiais",
+      "Médicos locais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "bookseller",
+    "name": "Livreiro",
+    "description": "Seja um proprietário de um ponto de venda ou se um serviço de venda por correspondência, você pode oferecer conselhos de leitura, organizar eventos literários e manter uma vasta coleção de livros.",
+    "creditRatingMin": 20,
+    "creditRatingMax": 40,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "analysis",
+      "accounting",
+      "driving",
+      "history",
+      "library",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_LANGUAGES",
+      "CHOICE_LANGUAGES"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Bibliógrafos",
+      "Universidades",
+      "Clientes"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "merchant_seaman",
+    "name": "Marinheiro Mercante",
+    "description": "Marinheiros mercantes podem trabalhar transportando petróleo, commodities, bem como oferecendo transporte para turistas e aspirantes da pesca esportiva. Podem também serem contratados por barcos fretados e embarcações pesqueiras. Dado a Lei Seca de 1920 dos EUA, alguns marinheiros mercantes arriscam levar clientes sedentos por bebidas para embarcações estrangeiras que vendiam álcool.",
+    "creditRatingMin": 20,
+    "creditRatingMax": 40,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
@@ -1213,187 +1214,187 @@
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "mechanical_repairs",
+      "find",
+      "natural_world",
+      "swimming",
+      "navigation",
+      "first_aid",
+      "piloting",
+      "CHOICE_INTERPERSONAL"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Guarda costeira",
+      "Contrabandistas",
+      "Crime organizado"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "mechanic",
+    "name": "Mecânico (e outras atividades especializadas)",
+    "description": "Esta é uma ocupação mais generalista que inclui algum tipo de conhecimento específico ou treinamento especializado para ser realizada com sucesso.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 40,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "mechanical_repairs",
+      "electrical_repairs",
+      "driving",
+      "climb",
+      "heavy_machinery",
+      "CHOICE_ART_AND_LABOR",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Membros do sindicato",
+      "Especialistas relevantes da área de atuação",
+      "Clientes"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "medic",
+    "name": "Médico",
+    "description": "Você é um profissional altamente qualificado em medicina, com conhecimentos avançados em várias áreas da saúde humana. Seu trabalho envolve a diagnóstico, tratamento e prevenção de doenças, bem como a promoção da saúde pública. Seu papel é fundamental para a melhoria da qualidade de vida das pessoas e a redução da morbidade e mortalidade. Pode estar situado em uma zona rural ou vizinhança de uma pequena cidade. Alguns são empregados por grandes hospitais urbanos.",
+    "creditRatingMin": 30,
+    "creditRatingMax": 80,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "biology",
+      "pharmacy",
+      "medicine",
+      "latin",
+      "first_aid",
+      "psychology",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Outros médicos",
+      "Trabalhadores do hospital",
+      "Pacientes"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "butler_housekeeper",
+    "name": "Mordomo/Governanta",
+    "description": "Você é o(a) criado(a) doméstico principal de uma propriedade grande. Tradicionalmente, você é responsável pela adega, despensa e sala de jantar. Se for um mordomo, você irá cuidar dos empregados masculinos. Se for uma governanta, você irá cuidar das empregadas femininas. Os seus deveres também podem variar de acordo com as exigências de seu empregador.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 40,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "find",
+      "listen",
+      "first_aid",
+      "psychology",
+      "CHOICE_ART_AND_LABOR",
+      "CHOICE:analysis|accounting",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Criados de outras famílias",
+      "Empresas locais",
+      "Fornecedores de marcadorias domésticas"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "musician",
+    "name": "Músico",
+    "description": "1920 é a era do jazz e você esta inserido no meio de uma grande mudança cultural. As pessoas estão se divertindo mais e estão mais dispostas a experimentar novas coisas e você, trabalhando solo, em grupo ou para uma orquestras, tem o potencial de guiar essas novas experiências através do seu som.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryChoiceAttrs": ["DEX", "APP"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "music",
+      "listen",
+      "psychology",
+      "CHOICE_INTERPERSONAL",
+      "ANY",
+      "ANY",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Proprietários de clubes",
+      "Sindicato de músicos",
+      "Crime organizado"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "antique_dealer",
+    "name": "Negociador de Antiguidades",
+    "description": "Diferente do Antiquário, você não possui uma loja física, trabalhando mais em movimento, viajando de forma prolongada para fazer compras e lucrando com a revenda para lojas urbanas.",
+    "creditRatingMin": 30,
+    "creditRatingMax": 50,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "analysis",
+      "accounting",
+      "driving",
+      "history",
+      "navigation",
+      "library",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Historiadores locais",
+      "Atravessadores criminosos",
+      "Outros negociadores de antiguidades"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "occultist",
+    "name": "Ocultista",
+    "description": "Um estudante ávido de segredos e conhecimentos esotéricos e magia arcana. O paranormal para o ocultista é algo plenamente crível e existente e por isso, buscam aprender e descobrir mais do mesmo. Alguns adquirem um certo nível de loucura na busca de tais conhecimentos e segredos, acreditando fielmente que podem realizar proezas mágicas.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 65,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "history",
+      "astronomy",
+      "occult",
+      "library",
+      "forbidden_lore",
+      "CHOICE_SCIENCE",
+      "CHOICE_INTERPERSONAL",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Bibliotecas",
+      "Sociedades ocultistas",
+      "Fraternidades ocultistas"
     ]
   },
   {
