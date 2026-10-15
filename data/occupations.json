@@ -1398,255 +1398,255 @@
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "military_officer",
+    "name": "Oficial Militar",
+    "description": "Você é um profissional com ensino superior completo e treinamento militar extensivo, tendo acabado de completar os 4 anos obrigatórios de serviço militar para o governo. Você decidiu continuar na ativa ao invés de ir para a vida civil mundana e conquistou a posição de Oficial Militar após anos. Você é respeitado e reconhecido por onde passa. ",
+    "creditRatingMin": 20,
+    "creditRatingMax": 70,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
       "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "guns",
+      "accounting",
+      "navigation",
+      "first_aid",
+      "psychology",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Exército",
+      "Governo federal",
+      "Autoridades locais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "worker",
+    "name": "Operário",
+    "description": "Você é um trabalhador não qualificado, mas que possui ótimas habilidades com ferramentas elétricas e equipamentos que são encontrados no seu ambiente de trabalho.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
       "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "throw",
+      "mechanical_repairs",
+      "electrical_repairs",
+      "driving",
+      "fighting",
+      "heavy_machinery",
+      "first_aid",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Supervisores do local de trabalho",
+      "RH da empresa",
+      "Colegas de trabalho"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "Parapsychologist",
+    "name": "Parapsicólogo",
+    "description": "Muitas vezes apelidados de 'caçadores de fantasmas', você é um estudante dedicado ao paranormal. Alguns parapsicologos se contentam em ficar desmascarando médiuns farsantes em vez de realmente registrar evidências reais do paranormal. Você busca validar a existência de poderes místicos e eventos paranormais usando a física e a ciência, normalmente causando vários conflitos com ideais religiosos da época.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "history",
+      "occult",
+      "psychology",
+      "library",
+      "forbidden_lore",
+      "CHOICE_ART_AND_LABOR",
+      "CHOICE_LANGUAGES",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Universidades",
+      "Publicações relacionadas a parapsicologia",
+      "Psicólogos pertubados"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "researcher",
+    "name": "Pesquisador",
+    "description": "Você faz parte da linha de frente do mundo acadêmico, dedicado a descobrir novos conhecimentos e avançar a ciência. Com uma base sólida em educação e uma paixão pela investigação, você busca entender os mistérios do universo e contribuir para o avanço científico.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "find",
+      "history",
+      "library",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_LANGUAGES",
+      "CHOICE_SCIENCE",
+      "CHOICE_SCIENCE",
+      "CHOICE_SCIENCE"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Acadêmicos",
+      "Eruditos",
+      "Governos e grandes empresas"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "aviator",
+    "name": "Piloto (Aviador)",
+    "description": "Você é um piloto de acrobacias, dedicado a festivais e a oferecer passeios ousados para clientes abastados. Você pode ter feito a sua fama em competições aéreas, em filmes de Hollywood ou até mesmo durante a Grande Guerra.",
+    "creditRatingMin": 30,
+    "creditRatingMax": 60,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "electrical_repairs",
+      "mechanical_repairs",
+      "accounting",
+      "find",
+      "listen",
+      "navigation",
+      "piloting",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Contatos militares",
+      "Mecânicos de aeródromos",
+      "Empresários"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "teacher",
+    "name": "Professor",
+    "description": "A profissão mais nobre de todas. Você é um educador dedicado a transmitir conhecimento e inspirar os alunos. Pode ter trabalhado em escolas, universidades ou institutos de ensino superior.",
+    "creditRatingMin": 20,
+    "creditRatingMax": 70,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "psychology",
+      "library",
+      "CHOICE_LANGUAGES",
+      "CHOICE_LANGUAGES",
+      "ANY",
+      "ANY",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Acadêmicos",
+      "Universidades",
+      "Bibliotecas"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "prostitute",
+    "name": "Prostituta",
+    "description": "Dependendo das circunstâncias ou do seu histórico, você pode ser uma garota de programa de luxo ou uma prostituta de rua. Você pode trabalhar de forma independente ou sob a 'proteção' de um cafetão.",
+    "creditRatingMin": 5,
+    "creditRatingMax": 50,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryChoiceAttrs": ["APP"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "dodge",
+      "stealth",
+      "sleight_of_hand",
+      "psychology",
+      "CHOICE_ART_AND_LABOR",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Cotidiano urbano",
+      "Polícia",
+      "Crime organizado"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "psychologist_psychoanalyst",
+    "name": "Psicólogo/Psicanalista",
+    "description": "Sendo um campo relativamente novo e focado extensivamente na análise freudiana, você pode trabalhar em consultórios privados, hospitais ou instituições de ensino. Alguns ainda olham para essa profissão como um 'médico de loucos'.",
+    "creditRatingMin": 10,
+    "creditRatingMax": 40,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "listen",
+      "persuasion",
+      "psychoanalysis",
+      "psychology",
+      "library",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Comunidade psicológica",
+      "Pacientes",
+      "Universidades de medicina"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "psychiatrist",
+    "name": "Psiquiatra",
+    "description": "Você é um profissional de uma área relavativamente nova, podendo realizar tratamentos psicofarmacológicos e possuem permissão para prescrever medicação psiquiátrica. No entanto, o maior desafio dessa profissão ainda é tentar explicar fenônemos que até então eram considerados de natureza biológica.",
+    "creditRatingMin": 30,
+    "creditRatingMax": 80,
     "formula": {
       "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
+      "primaryMultiplier": 4,
+      "secondaryChoiceAttrs": [],
       "secondaryMultiplier": 0
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "biology",
+      "chemistry",
+      "listen",
+      "medicine",
+      "persuasion",
+      "psychology",
+      "psychoanalysis",
+      "CHOICE_LANGUAGES"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Profissionais do campo de doenças mentais",
+      "Médicos",
+      "Alguns profissionais da área jurídica"
     ]
   },
   {
