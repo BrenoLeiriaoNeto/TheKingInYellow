@@ -31,7 +31,7 @@
   {
     "id": "undertaker",
     "name": "Agente Funerário",
-    "description": "",
+    "description": "Você administra ritos funerários, cuidando dos preparativos e dos serviços funerários para os mortos. Esta é uma profissão licenciada pelo estado, então você não pode fazer ritos funerários de forma legal fora do estado que esta registrado.",
     "creditRatingMin": 20,
     "creditRatingMax": 40,
     "formula": {
@@ -644,7 +644,7 @@
   {
     "id": "criminal",
     "name": "Criminoso",
-    "description": "",
+    "description": "Seja trabalhando sozinho, em grupo ou fazendo parte de alguma facção crimisona ou máfia, você dedica a sua vida a tirar dos outros para benefício próprio ou para benefício de algum cliente ou família criminosa. ",
     "creditRatingMin": 5,
     "creditRatingMax": 65,
     "formula": {
@@ -1342,7 +1342,7 @@
     ]
   },
   {
-    "id": "antique_dealer",
+    "id": "antique_trader",
     "name": "Negociador de Antiguidades",
     "description": "Diferente do Antiquário, você não possui uma loja física, trabalhando mais em movimento, viajando de forma prolongada para fazer compras e lucrando com a revenda para lojas urbanas.",
     "creditRatingMin": 30,
@@ -1454,7 +1454,7 @@
     ]
   },
   {
-    "id": "Parapsychologist",
+    "id": "parapsychologist",
     "name": "Parapsicólogo",
     "description": "Muitas vezes apelidados de 'caçadores de fantasmas', você é um estudante dedicado ao paranormal. Alguns parapsicologos se contentam em ficar desmascarando médiuns farsantes em vez de realmente registrar evidências reais do paranormal. Você busca validar a existência de poderes místicos e eventos paranormais usando a física e a ciência, normalmente causando vários conflitos com ideais religiosos da época.",
     "creditRatingMin": 9,
@@ -1650,619 +1650,143 @@
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "pugilist",
+    "name": "Pugilista",
+    "description": "Você é um lutador profissional gerenciado por um agente esportivo. Você vive em academias e tem todo tipo de acessoria e assistência de saúde ao seu dispor, mas é preso por um contrato com o agente que pode, ou não, decidir se você vai ganhar ou perder as suas lutas.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 60,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryChoiceAttrs": ["STR"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "find",
+      "dodge",
+      "intimidation",
+      "fighting",
+      "psychology",
+      "jump",
+      "ANY",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Agentes esportivos",
+      "Jornalistas",
+      "Treinadores profissionais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "secretary",
+    "name": "Secretário(a)",
+    "description": "Você é um secretário(a) de uma empresa ou escritório. Você é responsável por manter os arquivos organizados, agendar reuniões, fazer cópias e enviar documentos por correio. Você também pode ser responsável por receber e atender clientes ou visitantes.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryChoiceAttrs": ["DEX", "APP"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "accounting",
+      "psychology",
+      "library",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_INTERPERSONAL",
+      "CHOICE_LANGUAGES",
+      "CHOICE:typing|stenography",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Funcionários do escritório",
+      "Executivos do alto escalão de empresas clientes",
+      "Possívelmente os familiares de seus gerentes"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "survivalist",
+    "name": "Sobrevivencialista",
+    "description": "Isolacionista por natureza, você passa a maior parte do seu tempo e da sua vida em regiõe selvagens, sobrevivendo do que a natureza pode te oferecer. Você pode ser um eremita que só volta para a civilização quando há extrema necessidade, ou pode ser contratado como um guarda florestal por um parque nacional.",
+    "creditRatingMin": 5,
+    "creditRatingMax": 20,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
       "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "guns",
+      "listen",
+      "find",
+      "natural_world",
+      "navigation",
+      "first_aid",
+      "track",
+      "survival"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Pessoas e nativos locais",
+      "Comerciantes",
+      "Guardas florestais"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "id": "soldier",
+    "name": "Soldado",
+    "description": "Todas as pessoas alistadas no serviço militar recebem treinamento básico para poderem aprender a marchar, disparar e saudar. Você decidiu continuar com a carreira militar e faz parte da tropa de infantaria dos Estados Unidos da América.",
+    "creditRatingMin": 9,
+    "creditRatingMax": 30,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
       "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "guns",
+      "dodge",
+      "stealth",
+      "fighting",
+      "survival",
+      "CHOICE_LANGUAGES",
+      "CHOICE:climb|swimming",
+      "CHOICE:first_aid|mechanical_repairs"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Militares",
+      "Associações de veteranos",
+      "Marinheiros"
     ]
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
+    "id": "tramp",
+    "name": "Vagabundo",
+    "description": "Enquanto andarilhos trabalham apenas quando forçados, vagabundos são essencialmente trabalhadores.....que vagam. Seja nos trilhos de trem, indo de uma cidade para outra recitando poesias, explorando estradas, se aventurando ou até mesmo roubando, essa é uma vida perigosa.",
     "creditRatingMin": 0,
-    "creditRatingMax": 0,
+    "creditRatingMax": 5,
     "formula": {
       "primaryAttr": "EDU",
       "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
+      "secondaryChoiceAttrs": ["DEX", "APP"],
+      "secondaryMultiplier": 2
     },
     "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "climb",
+      "listen",
+      "stealth",
+      "navigation",
+      "jump",
+      "CHOICE_ART_AND_LABOR",
+      "CHOICE:lock_picking|sleight_of_hand",
+      "ANY"
     ],
     "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "description": "",
-    "creditRatingMin": 0,
-    "creditRatingMax": 0,
-    "formula": {
-      "primaryAttr": "EDU",
-      "primaryMultiplier": 2,
-      "secondaryChoiceAttrs": ["DEX", "STR"],
-      "secondaryMultiplier": 0
-    },
-    "skillIds": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "suggestedContacts": [
-      "",
-      "",
-      ""
+      "Mendigos",
+      "Guardas ferroviários amigáveis",
+      "Pessoas de coração mole"
     ]
   }
 ]
