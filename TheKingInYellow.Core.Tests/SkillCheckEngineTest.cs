@@ -1,4 +1,5 @@
-﻿using TheKingInYellow.Core.Domain.Enums;
+using TheKingInYellow.Core.Domain.Enums;
+using TheKingInYellow.Core.Domain.ValueObjects;
 using TheKingInYellow.Core.Services;
 using Xunit;
 
@@ -11,35 +12,58 @@ public class SkillCheckEngineTests
     [InlineData(10, 50, SuccessLevel.Extreme)]
     [InlineData(25, 50, SuccessLevel.Hard)]
     [InlineData(45, 50, SuccessLevel.Regular)]
+    [InlineData(50, 50, SuccessLevel.Regular)]
     [InlineData(51, 50, SuccessLevel.Failure)]
+    [InlineData(95, 50, SuccessLevel.Failure)]
+    [InlineData(96, 50, SuccessLevel.Failure)]
+    [InlineData(99, 50, SuccessLevel.Failure)]
+    [InlineData(100, 50, SuccessLevel.Fumble)]
     public void EvaluateRoll_WithNormalSkill_MustReturnCorrectLevel(int roll, int skillValue,
         SuccessLevel expected)
     {
         var result = SkillCheckEngine.EvaluateRoll(roll, skillValue);
-        
+
         Assert.Equal(expected, result);
     }
 
-    [Fact]
-    public void EvaluateRoll_SkillLessThan50_Rolls96_MustBeFumble()
+    [Theory]
+    [InlineData(96)]
+    [InlineData(97)]
+    [InlineData(98)]
+    [InlineData(99)]
+    [InlineData(100)]
+    public void EvaluateRoll_SkillLessThan50_Rolls96To100_MustBeFumble(int roll)
     {
         var skillValue = 40;
-        var roll = 96;
-        
+
         var result = SkillCheckEngine.EvaluateRoll(roll, skillValue);
-        
+
         Assert.Equal(SuccessLevel.Fumble, result);
     }
-    
-    [Fact]
-    public void EvaluateRoll_SkillGreaterThanOrEquals50_Rolls96_MustBeFailure()
+
+    [Theory]
+    [InlineData(96)]
+    [InlineData(97)]
+    [InlineData(98)]
+    [InlineData(99)]
+    public void EvaluateRoll_SkillGreaterThanOrEquals50_Rolls96To99_MustBeFailure(int roll)
     {
         var skillValue = 60;
-        var roll = 96;
 
         var result = SkillCheckEngine.EvaluateRoll(roll, skillValue);
 
         Assert.Equal(SuccessLevel.Failure, result);
+    }
+
+    [Fact]
+    public void EvaluateRoll_SkillGreaterThanOrEquals50_Rolls100_MustBeFumble()
+    {
+        var skillValue = 60;
+        var roll = 100;
+
+        var result = SkillCheckEngine.EvaluateRoll(roll, skillValue);
+
+        Assert.Equal(SuccessLevel.Fumble, result);
     }
 
     [Fact]
@@ -51,6 +75,60 @@ public class SkillCheckEngineTests
 
             Assert.True(result.RollValue is >= 1 and <= 100);
             Assert.Equal(1, result.BonusPenaltyDice);
+            Assert.Equal(50, result.TargetValue);
+            Assert.Equal(result.Level >= SuccessLevel.Regular, result.IsSuccess);
         }
+    }
+
+    [Fact]
+    public void RollCheck_WithPenaltyDice_MustExecuteSuccessfully()
+    {
+        for (var i = 0; i < 100; i++)
+        {
+            var result = SkillCheckEngine.RollCheck(50, -1);
+
+            Assert.True(result.RollValue is >= 1 and <= 100);
+            Assert.Equal(-1, result.BonusPenaltyDice);
+            Assert.Equal(50, result.TargetValue);
+            Assert.Equal(result.Level >= SuccessLevel.Regular, result.IsSuccess);
+        }
+    }
+
+    [Fact]
+    public void RollCheck_WithoutBonusOrPenalty_MustExecuteSuccessfully()
+    {
+        for (var i = 0; i < 50; i++)
+        {
+            var result = SkillCheckEngine.RollCheck(60, 0);
+
+            Assert.True(result.RollValue is >= 1 and <= 100);
+            Assert.Equal(0, result.BonusPenaltyDice);
+            Assert.Equal(60, result.TargetValue);
+            Assert.Equal(result.Level >= SuccessLevel.Regular, result.IsSuccess);
+        }
+    }
+
+    [Theory]
+    [InlineData(50, 25)]
+    [InlineData(51, 25)]
+    [InlineData(80, 40)]
+    [InlineData(0, 0)]
+    public void ResolveBaseValue_DerivedAttributeDexDiv2_ReturnsHalfDexterity(int dexterity, int expectedValue)
+    {
+        var skill = new SkillDefinition("dodge", "Dodge", 0, "Physical", "", DerivedAttribute: "DEX_DIV_2");
+
+        var result = SkillCheckEngine.ResolveBaseValue(skill, dexterity);
+
+        Assert.Equal(expectedValue, result);
+    }
+
+    [Fact]
+    public void ResolveBaseValue_FixedBaseValue_ReturnsStaticBaseValue()
+    {
+        var skill = new SkillDefinition("spot_hidden", "Spot Hidden", 25, "Awareness", "", DerivedAttribute: null);
+
+        var result = SkillCheckEngine.ResolveBaseValue(skill, dexterity: 80);
+
+        Assert.Equal(25, result);
     }
 }

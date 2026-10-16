@@ -2,14 +2,17 @@ using TheKingInYellow.Core.Domain.ValueObjects;
 
 namespace TheKingInYellow.Core.Services;
 
+/// <summary>
+/// Serviço estático utilitário responsável pela simulação e rolagem de dados no sistema.
+/// </summary>
 public static class DiceRoller
 {
     /// <summary>
-    /// Rola um único dado com a quantidade de lados especificada.
+    /// Rola um único dado com a quantidade de faces/lados especificada.
     /// </summary>
-    /// <param name="sides"></param>
-    /// <returns></returns>
-    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    /// <param name="sides">A quantidade de lados do dado (deve ser no mínimo 1).</param>
+    /// <returns>Um número inteiro pseudoaleatório entre 1 e <paramref name="sides"/>.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Lançada quando <paramref name="sides"/> for menor que 1.</exception>
     public static int Roll(int sides)
     {
         if (sides < 1)
@@ -20,14 +23,14 @@ public static class DiceRoller
     }
 
     /// <summary>
-    /// Rola multiplos dados do mesmo tipo e aplica um modificador ao total.
+    /// Rola múltiplos dados do mesmo tipo e aplica um modificador ao total.
     /// Exemplo: 3d6 + 2 -> RollDice(3, 6, 2)
     /// </summary>
-    /// <param name="count"></param>
-    /// <param name="sides"></param>
-    /// <param name="modifier"></param>
-    /// <returns></returns>
-    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    /// <param name="count">A quantidade de dados a serem rolados (deve ser maior que zero).</param>
+    /// <param name="sides">A quantidade de lados de cada dado (deve ser no mínimo 1).</param>
+    /// <param name="modifier">O valor modificador numérico adicionado ao resultado final da rolagem.</param>
+    /// <returns>Uma estrutura <see cref="DiceRollResult"/> com o total e o detalhamento individual de cada dado.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Lançada quando <paramref name="count"/> ou <paramref name="sides"/> forem menores que 1.</exception>
     public static DiceRollResult RollDice(int count, int sides, int modifier = 0)
     {
         if (count < 1)
@@ -53,18 +56,47 @@ public static class DiceRoller
         var total = sum + modifier;
         return new DiceRollResult(total, rolls, count, sides, modifier);
     }
-    
+
+    /// <summary>
+    /// Rola um dado de 4 lados (d4).
+    /// </summary>
+    /// <returns>Um valor inteiro entre 1 e 4.</returns>
     public static int RollD4() => Roll(4);
+
+    /// <summary>
+    /// Rola um dado de 6 lados (d6).
+    /// </summary>
+    /// <returns>Um valor inteiro entre 1 e 6.</returns>
     public static int RollD6() => Roll(6);
+
+    /// <summary>
+    /// Rola um dado de 8 lados (d8).
+    /// </summary>
+    /// <returns>Um valor inteiro entre 1 e 8.</returns>
     public static int RollD8() => Roll(8);
+
+    /// <summary>
+    /// Rola um dado de 10 lados (d10).
+    /// </summary>
+    /// <returns>Um valor inteiro entre 1 e 10.</returns>
     public static int RollD10() => Roll(10);
+
+    /// <summary>
+    /// Rola um dado de 20 lados (d20).
+    /// </summary>
+    /// <returns>Um valor inteiro entre 1 e 20.</returns>
     public static int RollD20() => Roll(20);
+
+    /// <summary>
+    /// Rola um dado percentual de 100 lados (d100).
+    /// </summary>
+    /// <returns>Um valor inteiro entre 1 e 100.</returns>
     public static int RollD100() => Roll(100);
 
     /// <summary>
-    /// Método clássico para criação de atributos
+    /// Método clássico para criação de atributos (rola 3d6 e multiplica o total por 5).
     /// </summary>
-    /// <returns></returns>
+    /// <returns>O valor final percentual gerado para o atributo.</returns>
     public static int RollAttribute3D6()
     {
         var result = RollDice(3, 6);
@@ -72,9 +104,9 @@ public static class DiceRoller
     }
 
     /// <summary>
-    /// Método para atributos de escala maior
+    /// Método para atributos de escala maior (rola 2d6 + 6 e multiplica o total por 5).
     /// </summary>
-    /// <returns></returns>
+    /// <returns>O valor final percentual gerado para o atributo.</returns>
     public static int RollAttribute2D6Plus6()
     {
         var result = RollDice(2, 6, modifier: 6);
