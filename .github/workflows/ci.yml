@@ -61,7 +61,7 @@ jobs:
         run: dotnet format TheKingInYellow.sln --verify-no-changes --verbosity diagnostic
 
       - name: Compilar Solução (Tratar Warnings como Erros)
-        run: dotnet build --configuration Release --no-restore /p:TreatWarningsAsErrors=true
+        run: dotnet build TheKingInYellow.sln --configuration Release --no-restore /p:TreatWarningsAsErrors=true /p:Platform="AnyCPU"
 
       - name: Executar Testes Unitários (xUnit)
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet test TheKingInYellow.sln --configuration Release --no-build --verbosity normal /p:Platform="AnyCPU"
