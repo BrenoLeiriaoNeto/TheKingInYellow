@@ -58,7 +58,7 @@ jobs:
         run: dotnet restore
 
       - name: Checar Formatação de Código (dotnet format)
-        run: dotnet format --verify-no-changes --verbosity diagnostic
+        run: dotnet format TheKingInYellow.sln --verify-no-changes --verbosity diagnostic
 
       - name: Compilar Solução (Tratar Warnings como Erros)
         run: dotnet build --configuration Release --no-restore /p:TreatWarningsAsErrors=true
