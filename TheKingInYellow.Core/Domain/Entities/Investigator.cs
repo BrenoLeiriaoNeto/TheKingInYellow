@@ -222,7 +222,7 @@ public partial class Investigator
     public void HealHp(int amount) => CurrentHp = Math.Min(MaxHp, CurrentHp + amount);
 
     /// <summary>
-    /// Processa a leitura de um livro proibido, aumentando o conhecimento do Mythos, adicionando o tomo lido ao histórico e aplicando perda de lucidez.
+    /// Processa a leitura de um livro proibido, aumentando o conhecimento do proibido, adicionando o tomo lido ao histórico e aplicando perda de lucidez.
     /// </summary>
     /// <param name="bookId">Identificador do livro proibido lido.</param>
     /// <param name="lucidityLoss">Quantidade de perda de lucidez sofrida.</param>
