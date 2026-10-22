@@ -178,14 +178,14 @@ public partial class Investigator
         OccupationId = occupationId;
         CreditRating = creditRating;
 
-        Str = GetStatOrFallback(baseAttributes,"STR");
-        Con = GetStatOrFallback(baseAttributes,"CON");
-        Siz = GetStatOrFallback(baseAttributes,"SIZ");
-        Dex = GetStatOrFallback(baseAttributes,"DEX");
-        App = GetStatOrFallback(baseAttributes,"APP");
-        Int = GetStatOrFallback(baseAttributes,"INT");
-        Pow = GetStatOrFallback(baseAttributes,"POW");
-        Edu = GetStatOrFallback(baseAttributes,"EDU");
+        Str = GetStatOrFallback(baseAttributes, "STR");
+        Con = GetStatOrFallback(baseAttributes, "CON");
+        Siz = GetStatOrFallback(baseAttributes, "SIZ");
+        Dex = GetStatOrFallback(baseAttributes, "DEX");
+        App = GetStatOrFallback(baseAttributes, "APP");
+        Int = GetStatOrFallback(baseAttributes, "INT");
+        Pow = GetStatOrFallback(baseAttributes, "POW");
+        Edu = GetStatOrFallback(baseAttributes, "EDU");
         Luck = new StatValue(luck);
 
         MaxHp = InvestigatorCalculator.CalculateMaxHp(Con, Siz);
@@ -202,7 +202,7 @@ public partial class Investigator
         (DamageBonus, Build) =
             InvestigatorCalculator.CalculateDamageBonusAndBuild(Str, Siz);
 
-        
+
         foreach (var (skillId, val) in allocatedSkills)
         {
             _skills[skillId] = new StatValue(val);
@@ -266,7 +266,7 @@ public partial class Investigator
     {
         if (dict != null && dict.TryGetValue(key, out var val))
             return new StatValue(val);
-        
+
         return new StatValue(fallback);
     }
 }

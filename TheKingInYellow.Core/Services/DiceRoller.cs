@@ -56,7 +56,7 @@ public static class DiceRoller
         var total = sum + modifier;
         return new DiceRollResult(total, rolls, count, sides, modifier);
     }
-    
+
     /// <summary>
     /// Rola um dado de 3 lados (d3)
     /// </summary>
@@ -86,7 +86,7 @@ public static class DiceRoller
     /// </summary>
     /// <returns>Um valor inteiro entre 1 e 10.</returns>
     public static int RollD10() => Roll(10);
-    
+
     /// <summary>
     /// Rola um dado de 12 lados (d12)
     /// </summary>

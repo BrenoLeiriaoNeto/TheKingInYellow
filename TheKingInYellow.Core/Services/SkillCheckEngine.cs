@@ -17,10 +17,10 @@ public static class SkillCheckEngine
     /// <returns>Uma estrutura <see cref="SkillCheckResult"/> contendo os detalhes e o resultado consolidado do teste.</returns>
     public static SkillCheckResult RollCheck(int skillValue, int bonusPenaltyDice = 0)
     {
-       return RollTaskCheck(
-            skillValue,
-            SuccessLevel.Regular,
-            bonusPenaltyDice);
+        return RollTaskCheck(
+             skillValue,
+             SuccessLevel.Regular,
+             bonusPenaltyDice);
     }
 
     /// <summary>

@@ -11,7 +11,7 @@ public readonly record struct StatValue
     /// O valor base do atributo ou perícia, limitado ao intervalo de 0 a 99.
     /// </summary>
     public int Base { get; }
-    
+
     /// <summary>
     /// O valor da metade (Regular/Difícil - Hard) calculado por divisão inteira por 2.
     /// </summary>
@@ -21,7 +21,7 @@ public readonly record struct StatValue
     /// O valor de um quinto (Extremo - Extreme) calculado por divisão inteira por 5.
     /// </summary>
     public int Fifth => Base / 5;
-    
+
     /// <summary>
     /// Inicializa uma nova instância de <see cref="StatValue"/> com o valor base informado, ajustando-o para o intervalo [0, 99].
     /// </summary>
@@ -30,7 +30,7 @@ public readonly record struct StatValue
     {
         Base = Math.Clamp(value, 0, 99);
     }
-    
+
     /// <summary>
     /// Converte implicitamente uma instância de <see cref="StatValue"/> para o seu valor inteiro base.
     /// </summary>
@@ -42,7 +42,7 @@ public readonly record struct StatValue
     /// </summary>
     /// <param name="value">O valor inteiro base.</param>
     public static implicit operator StatValue(int value) => new(value);
-    
+
     /// <summary>
     /// Retorna a representação textual do valor base do atributo.
     /// </summary>
