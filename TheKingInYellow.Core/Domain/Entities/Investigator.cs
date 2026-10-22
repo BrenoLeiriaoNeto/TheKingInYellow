@@ -254,6 +254,13 @@ public partial class Investigator
         };
     }
 
+    /// <summary>
+    /// Obtém o valor do atributo especificado a partir do dicionário ou retorna o valor de contingência (fallback) padrão.
+    /// </summary>
+    /// <param name="dict">Dicionário de atributos base fornecido.</param>
+    /// <param name="key">Chave identificadora do atributo (ex: "STR", "CON").</param>
+    /// <param name="fallback">Valor padrão a ser assumido caso o atributo não esteja presente no dicionário (padrão é 10).</param>
+    /// <returns>Uma estrutura <see cref="StatValue"/> com o valor recuperado ou de fallback.</returns>
     private static StatValue GetStatOrFallback(IReadOnlyDictionary<string, int>? dict, string key,
         int fallback = 10)
     {

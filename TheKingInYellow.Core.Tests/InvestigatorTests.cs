@@ -193,4 +193,40 @@ public class InvestigatorTests
         Assert.Equal("Burn scar across right forearm",
             investigator.InvestigatorBiography.ScarsAndInjuries![1]);
     }
+
+    [Fact]
+    public void Constructor_WithEmptyOrMissingAttributes_UsesDefaultFallbackStatValues()
+    {
+        var emptyAttributes = new Dictionary<string, int>();
+        var investigator = new Investigator(
+            "Novice Investigator",
+            25,
+            "journalist",
+            emptyAttributes,
+            luck: 50,
+            creditRating: 20,
+            allocatedSkills: new Dictionary<string, int>());
+
+        Assert.Equal(10, investigator.Str.Base);
+        Assert.Equal(10, investigator.Con.Base);
+        Assert.Equal(10, investigator.Siz.Base);
+        Assert.Equal(10, investigator.Dex.Base);
+        Assert.Equal(10, investigator.App.Base);
+        Assert.Equal(10, investigator.Int.Base);
+        Assert.Equal(10, investigator.Pow.Base);
+        Assert.Equal(10, investigator.Edu.Base);
+        Assert.Equal(50, investigator.Luck.Base);
+
+        // MaxHp = (10 + 10) / 10 = 2
+        Assert.Equal(2, investigator.MaxHp);
+        Assert.Equal(2, investigator.CurrentHp);
+
+        // MaxLucidity = 10
+        Assert.Equal(10, investigator.MaxLucidity);
+        Assert.Equal(10, investigator.CurrentLucidity);
+
+        // MaxMp = 10 / 5 = 2
+        Assert.Equal(2, investigator.MaxMp);
+        Assert.Equal(2, investigator.CurrentMp);
+    }
 }

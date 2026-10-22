@@ -131,4 +131,63 @@ public class SkillCheckEngineTests
 
         Assert.Equal(25, result);
     }
+
+    [Theory]
+    [InlineData(SuccessLevel.Fumble, SuccessLevel.Regular, false)]
+    [InlineData(SuccessLevel.Fumble, SuccessLevel.Hard, false)]
+    [InlineData(SuccessLevel.Failure, SuccessLevel.Regular, false)]
+    [InlineData(SuccessLevel.Failure, SuccessLevel.Hard, false)]
+    [InlineData(SuccessLevel.Regular, SuccessLevel.Regular, true)]
+    [InlineData(SuccessLevel.Regular, SuccessLevel.Hard, false)]
+    [InlineData(SuccessLevel.Regular, SuccessLevel.Extreme, false)]
+    [InlineData(SuccessLevel.Hard, SuccessLevel.Regular, true)]
+    [InlineData(SuccessLevel.Hard, SuccessLevel.Hard, true)]
+    [InlineData(SuccessLevel.Hard, SuccessLevel.Extreme, false)]
+    [InlineData(SuccessLevel.Extreme, SuccessLevel.Regular, true)]
+    [InlineData(SuccessLevel.Extreme, SuccessLevel.Hard, true)]
+    [InlineData(SuccessLevel.Extreme, SuccessLevel.Extreme, true)]
+    [InlineData(SuccessLevel.Extreme, SuccessLevel.Critical, false)]
+    [InlineData(SuccessLevel.Critical, SuccessLevel.Regular, true)]
+    [InlineData(SuccessLevel.Critical, SuccessLevel.Hard, true)]
+    [InlineData(SuccessLevel.Critical, SuccessLevel.Extreme, true)]
+    [InlineData(SuccessLevel.Critical, SuccessLevel.Critical, true)]
+    public void IsTaskSuccessful_EvaluatesAchievedVersusRequiredCorrectly(
+        SuccessLevel achieved, SuccessLevel required, bool expectedSuccess)
+    {
+        var isSuccess = SkillCheckEngine.IsTaskSuccessful(achieved, required);
+
+        Assert.Equal(expectedSuccess, isSuccess);
+    }
+
+    [Theory]
+    [InlineData(SuccessLevel.Regular)]
+    [InlineData(SuccessLevel.Hard)]
+    [InlineData(SuccessLevel.Extreme)]
+    public void RollTaskCheck_ReturnsConsistentSkillCheckResult(SuccessLevel requiredLevel)
+    {
+        for (var i = 0; i < 50; i++)
+        {
+            var result = SkillCheckEngine.RollTaskCheck(60, requiredLevel, bonusPenalty: 0);
+
+            Assert.InRange(result.RollValue, 1, 100);
+            Assert.Equal(60, result.TargetValue);
+            Assert.Equal(0, result.BonusPenaltyDice);
+            Assert.Equal(requiredLevel, result.RequiredLevel);
+
+            var expectedSuccess = SkillCheckEngine.IsTaskSuccessful(result.Level, requiredLevel);
+            Assert.Equal(expectedSuccess, result.IsSuccess);
+        }
+    }
+
+    [Fact]
+    public void RollTaskCheck_WithBonusAndPenaltyDice_AppliesModifierCorrectly()
+    {
+        var bonusResult = SkillCheckEngine.RollTaskCheck(50, SuccessLevel.Hard, bonusPenalty: 1);
+        Assert.Equal(1, bonusResult.BonusPenaltyDice);
+        Assert.Equal(SuccessLevel.Hard, bonusResult.RequiredLevel);
+
+        var penaltyResult = SkillCheckEngine.RollTaskCheck(50, SuccessLevel.Regular, bonusPenalty: -1);
+        Assert.Equal(-1, penaltyResult.BonusPenaltyDice);
+        Assert.Equal(SuccessLevel.Regular, penaltyResult.RequiredLevel);
+    }
 }

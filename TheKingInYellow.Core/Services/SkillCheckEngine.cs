@@ -82,6 +82,13 @@ public static class SkillCheckEngine
         return total == 0 ? 100 : total;
     }
 
+    /// <summary>
+    /// Determina se o nível de sucesso atingido é suficiente para cumprir o nível exigido pela tarefa.
+    /// Falhas normais e desastres (fumble) sempre resultam em insucesso.
+    /// </summary>
+    /// <param name="achievedLevel">O nível de sucesso obtido na rolagem.</param>
+    /// <param name="requiredLevel">O nível mínimo de sucesso exigido pela tarefa (padrão é Regular).</param>
+    /// <returns><c>true</c> se o nível obtido for igual ou superior ao nível exigido; caso contrário, <c>false</c>.</returns>
     public static bool IsTaskSuccessful(SuccessLevel achievedLevel,
         SuccessLevel requiredLevel = SuccessLevel.Regular)
     {
@@ -91,6 +98,14 @@ public static class SkillCheckEngine
         return achievedLevel >= requiredLevel;
     }
 
+    /// <summary>
+    /// Realiza um teste de tarefa com nível de dificuldade exigido e dados de bônus/penalidade opcionais,
+    /// avaliando a rolagem e determinando se a tarefa foi completada com sucesso.
+    /// </summary>
+    /// <param name="skillValue">O valor percentual da perícia do personagem (alvo do teste).</param>
+    /// <param name="requiredLevel">O nível mínimo de sucesso exigido para a tarefa.</param>
+    /// <param name="bonusPenalty">A quantidade de dados extras de dezena: valores positivos indicam bônus e valores negativos indicam penalidade.</param>
+    /// <returns>Uma estrutura <see cref="SkillCheckResult"/> contendo a rolagem, nível obtido, exigência e se foi bem-sucedida.</returns>
     public static SkillCheckResult RollTaskCheck(int skillValue, SuccessLevel requiredLevel,
         int bonusPenalty = 0)
     {
