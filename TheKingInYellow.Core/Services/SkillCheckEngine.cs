@@ -17,15 +17,10 @@ public static class SkillCheckEngine
     /// <returns>Uma estrutura <see cref="SkillCheckResult"/> contendo os detalhes e o resultado consolidado do teste.</returns>
     public static SkillCheckResult RollCheck(int skillValue, int bonusPenaltyDice = 0)
     {
-        var finalRoll = RollD100WithBonusPenalty(bonusPenaltyDice);
-        var level = EvaluateRoll(finalRoll, skillValue);
-
-        return new SkillCheckResult(
-            RollValue: finalRoll,
-            TargetValue: skillValue,
-            Level: level,
-            IsSuccess: level >= SuccessLevel.Regular,
-            BonusPenaltyDice: bonusPenaltyDice);
+        return RollTaskCheck(
+             skillValue,
+             SuccessLevel.Regular,
+             bonusPenaltyDice);
     }
 
     /// <summary>
@@ -85,5 +80,45 @@ public static class SkillCheckEngine
         var total = chosenTens + unitDigit;
 
         return total == 0 ? 100 : total;
+    }
+
+    /// <summary>
+    /// Determina se o nível de sucesso atingido é suficiente para cumprir o nível exigido pela tarefa.
+    /// Falhas normais e desastres (fumble) sempre resultam em insucesso.
+    /// </summary>
+    /// <param name="achievedLevel">O nível de sucesso obtido na rolagem.</param>
+    /// <param name="requiredLevel">O nível mínimo de sucesso exigido pela tarefa (padrão é Regular).</param>
+    /// <returns><c>true</c> se o nível obtido for igual ou superior ao nível exigido; caso contrário, <c>false</c>.</returns>
+    public static bool IsTaskSuccessful(SuccessLevel achievedLevel,
+        SuccessLevel requiredLevel = SuccessLevel.Regular)
+    {
+        if (achievedLevel is SuccessLevel.Failure or SuccessLevel.Fumble)
+            return false;
+
+        return achievedLevel >= requiredLevel;
+    }
+
+    /// <summary>
+    /// Realiza um teste de tarefa com nível de dificuldade exigido e dados de bônus/penalidade opcionais,
+    /// avaliando a rolagem e determinando se a tarefa foi completada com sucesso.
+    /// </summary>
+    /// <param name="skillValue">O valor percentual da perícia do personagem (alvo do teste).</param>
+    /// <param name="requiredLevel">O nível mínimo de sucesso exigido para a tarefa.</param>
+    /// <param name="bonusPenalty">A quantidade de dados extras de dezena: valores positivos indicam bônus e valores negativos indicam penalidade.</param>
+    /// <returns>Uma estrutura <see cref="SkillCheckResult"/> contendo a rolagem, nível obtido, exigência e se foi bem-sucedida.</returns>
+    public static SkillCheckResult RollTaskCheck(int skillValue, SuccessLevel requiredLevel,
+        int bonusPenalty = 0)
+    {
+        var finalRoll = RollD100WithBonusPenalty(bonusPenalty);
+        var achievedLevel = EvaluateRoll(finalRoll, skillValue);
+        var isSuccess = IsTaskSuccessful(achievedLevel, requiredLevel);
+
+        return new SkillCheckResult(
+            RollValue: finalRoll,
+            TargetValue: skillValue,
+            Level: achievedLevel,
+            IsSuccess: isSuccess,
+            BonusPenaltyDice: bonusPenalty,
+            RequiredLevel: requiredLevel);
     }
 }

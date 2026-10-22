@@ -8,12 +8,14 @@ namespace TheKingInYellow.Core.Domain.ValueObjects;
 /// <param name="RollValue">O valor numérico final obtido na rolagem de d100.</param>
 /// <param name="TargetValue">O valor alvo da perícia do personagem utilizado como referência para o teste.</param>
 /// <param name="Level">O nível de sucesso ou falha obtido no teste.</param>
-/// <param name="IsSuccess">Indica se o teste resultou em sucesso (nível Regular ou superior).</param>
+/// <param name="IsSuccess">Indica se o teste resultou em sucesso para o nível exigido.</param>
 /// <param name="BonusPenaltyDice">A quantidade de dados de bônus (positivo) ou penalidade (negativo) aplicados no teste.</param>
+/// <param name="RequiredLevel">O nível mínimo de sucesso exigido para que a tarefa seja considerada bem-sucedida.</param>
 public readonly record struct SkillCheckResult(
     int RollValue,
     int TargetValue,
     SuccessLevel Level,
     bool IsSuccess,
-    int BonusPenaltyDice
+    int BonusPenaltyDice = 0,
+    SuccessLevel RequiredLevel = SuccessLevel.Regular
     );
