@@ -53,7 +53,7 @@ public static class InvestigatorCalculator
     /// <param name="str">Valor de Força (STR).</param>
     /// <param name="dex">Valor de Destreza (DEX).</param>
     /// <param name="siz">Valor de Tamanho (SIZ).</param>
-    /// <param name="age">A idade do personagem.</param>
+    /// <param name="age">Idade do personagem.</param>
     /// <returns>A taxa de movimento calculada (mínimo de 1).</returns>
     public static int CalculateMovementRate(int str, int dex, int siz, int age)
     {

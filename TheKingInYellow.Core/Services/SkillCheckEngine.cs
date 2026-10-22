@@ -17,15 +17,10 @@ public static class SkillCheckEngine
     /// <returns>Uma estrutura <see cref="SkillCheckResult"/> contendo os detalhes e o resultado consolidado do teste.</returns>
     public static SkillCheckResult RollCheck(int skillValue, int bonusPenaltyDice = 0)
     {
-        var finalRoll = RollD100WithBonusPenalty(bonusPenaltyDice);
-        var level = EvaluateRoll(finalRoll, skillValue);
-
-        return new SkillCheckResult(
-            RollValue: finalRoll,
-            TargetValue: skillValue,
-            Level: level,
-            IsSuccess: level >= SuccessLevel.Regular,
-            BonusPenaltyDice: bonusPenaltyDice);
+       return RollTaskCheck(
+            skillValue,
+            SuccessLevel.Regular,
+            bonusPenaltyDice);
     }
 
     /// <summary>
@@ -85,5 +80,30 @@ public static class SkillCheckEngine
         var total = chosenTens + unitDigit;
 
         return total == 0 ? 100 : total;
+    }
+
+    public static bool IsTaskSuccessful(SuccessLevel achievedLevel,
+        SuccessLevel requiredLevel = SuccessLevel.Regular)
+    {
+        if (achievedLevel is SuccessLevel.Failure or SuccessLevel.Fumble)
+            return false;
+
+        return achievedLevel >= requiredLevel;
+    }
+
+    public static SkillCheckResult RollTaskCheck(int skillValue, SuccessLevel requiredLevel,
+        int bonusPenalty = 0)
+    {
+        var finalRoll = RollD100WithBonusPenalty(bonusPenalty);
+        var achievedLevel = EvaluateRoll(finalRoll, skillValue);
+        var isSuccess = IsTaskSuccessful(achievedLevel, requiredLevel);
+
+        return new SkillCheckResult(
+            RollValue: finalRoll,
+            TargetValue: skillValue,
+            Level: achievedLevel,
+            IsSuccess: isSuccess,
+            BonusPenaltyDice: bonusPenalty,
+            RequiredLevel: requiredLevel);
     }
 }

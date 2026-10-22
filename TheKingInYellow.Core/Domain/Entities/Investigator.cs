@@ -178,30 +178,31 @@ public partial class Investigator
         OccupationId = occupationId;
         CreditRating = creditRating;
 
-        Str = new StatValue(baseAttributes["STR"]);
-        Con = new StatValue(baseAttributes["CON"]);
-        Siz = new StatValue(baseAttributes["SIZ"]);
-        Dex = new StatValue(baseAttributes["DEX"]);
-        App = new StatValue(baseAttributes["APP"]);
-        Int = new StatValue(baseAttributes["INT"]);
-        Pow = new StatValue(baseAttributes["POW"]);
-        Edu = new StatValue(baseAttributes["EDU"]);
+        Str = GetStatOrFallback(baseAttributes,"STR");
+        Con = GetStatOrFallback(baseAttributes,"CON");
+        Siz = GetStatOrFallback(baseAttributes,"SIZ");
+        Dex = GetStatOrFallback(baseAttributes,"DEX");
+        App = GetStatOrFallback(baseAttributes,"APP");
+        Int = GetStatOrFallback(baseAttributes,"INT");
+        Pow = GetStatOrFallback(baseAttributes,"POW");
+        Edu = GetStatOrFallback(baseAttributes,"EDU");
         Luck = new StatValue(luck);
 
-        MaxHp = InvestigatorCalculator.CalculateMaxHp(Con.Base, Siz.Base);
+        MaxHp = InvestigatorCalculator.CalculateMaxHp(Con, Siz);
         CurrentHp = MaxHp;
 
-        MaxLucidity = InvestigatorCalculator.CalculateMaxLucidity(Pow.Base);
+        MaxLucidity = InvestigatorCalculator.CalculateMaxLucidity(Pow);
         CurrentLucidity = MaxLucidity;
 
-        MaxMp = InvestigatorCalculator.CalculateMaxMp(Pow.Base);
+        MaxMp = InvestigatorCalculator.CalculateMaxMp(Pow);
         CurrentMp = MaxMp;
 
         MovementRate =
-            InvestigatorCalculator.CalculateMovementRate(Str.Base, Dex.Base, Siz.Base, Age);
+            InvestigatorCalculator.CalculateMovementRate(Str, Dex, Siz, Age);
         (DamageBonus, Build) =
-            InvestigatorCalculator.CalculateDamageBonusAndBuild(Str.Base, Siz.Base);
+            InvestigatorCalculator.CalculateDamageBonusAndBuild(Str, Siz);
 
+        
         foreach (var (skillId, val) in allocatedSkills)
         {
             _skills[skillId] = new StatValue(val);
@@ -251,5 +252,14 @@ public partial class Investigator
         {
             ScarsAndInjuries = updatedScars
         };
+    }
+
+    private static StatValue GetStatOrFallback(IReadOnlyDictionary<string, int>? dict, string key,
+        int fallback = 10)
+    {
+        if (dict != null && dict.TryGetValue(key, out var val))
+            return new StatValue(val);
+        
+        return new StatValue(fallback);
     }
 }

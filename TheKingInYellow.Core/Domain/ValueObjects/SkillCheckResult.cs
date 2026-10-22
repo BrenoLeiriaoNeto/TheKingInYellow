@@ -15,5 +15,6 @@ public readonly record struct SkillCheckResult(
     int TargetValue,
     SuccessLevel Level,
     bool IsSuccess,
-    int BonusPenaltyDice
+    int BonusPenaltyDice = 0,
+    SuccessLevel RequiredLevel = SuccessLevel.Regular
     );
