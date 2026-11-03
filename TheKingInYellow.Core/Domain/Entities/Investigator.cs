@@ -198,9 +198,9 @@ public partial class Investigator
         CurrentMp = MaxMp;
 
         MovementRate =
-            InvestigatorCalculator.CalculateMovementRate(Str, Dex, Siz, Age);
+            InvestigatorCalculator.CalculateMovementRate(Str, Dex, Siz, Age).Value;
         (DamageBonus, Build) =
-            InvestigatorCalculator.CalculateDamageBonusAndBuild(Str, Siz);
+            InvestigatorCalculator.CalculateDamageBonusAndBuild(Str, Siz).Value;
 
 
         foreach (var (skillId, val) in allocatedSkills)

@@ -71,4 +71,25 @@ public class ResultTests
         Assert.Equal("valor_automatico", result.Value);
         Assert.Equal(string.Empty, result.Error);
     }
+    [Fact]
+    public void Result_ImplicitBoolConversion_ReturnsIsSuccess()
+    {
+        var success = Result.Success();
+        var failure = Result.Failure("Erro");
+
+        bool boolSuccess = success;
+        bool boolFailure = failure;
+
+        Assert.True(boolSuccess);
+        Assert.False(boolFailure);
+    }
+
+    [Fact]
+    public void ResultT_ImplicitValueConversion_ReturnsUnderlyingValue()
+    {
+        var result = Result<int>.Success(100);
+        int value = result;
+
+        Assert.Equal(100, value);
+    }
 }

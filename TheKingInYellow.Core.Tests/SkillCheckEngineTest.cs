@@ -23,7 +23,8 @@ public class SkillCheckEngineTests
     {
         var result = SkillCheckEngine.EvaluateRoll(roll, skillValue);
 
-        Assert.Equal(expected, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(expected, result.Value);
     }
 
     [Theory]
@@ -38,7 +39,8 @@ public class SkillCheckEngineTests
 
         var result = SkillCheckEngine.EvaluateRoll(roll, skillValue);
 
-        Assert.Equal(SuccessLevel.Fumble, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(SuccessLevel.Fumble, result.Value);
     }
 
     [Theory]
@@ -52,7 +54,8 @@ public class SkillCheckEngineTests
 
         var result = SkillCheckEngine.EvaluateRoll(roll, skillValue);
 
-        Assert.Equal(SuccessLevel.Failure, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(SuccessLevel.Failure, result.Value);
     }
 
     [Fact]
@@ -63,7 +66,29 @@ public class SkillCheckEngineTests
 
         var result = SkillCheckEngine.EvaluateRoll(roll, skillValue);
 
-        Assert.Equal(SuccessLevel.Fumble, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(SuccessLevel.Fumble, result.Value);
+    }
+
+    [Theory]
+    [InlineData(0, 50)]
+    [InlineData(101, 50)]
+    [InlineData(-5, 50)]
+    public void EvaluateRoll_InvalidRoll_ReturnsFailure(int invalidRoll, int skillValue)
+    {
+        var result = SkillCheckEngine.EvaluateRoll(invalidRoll, skillValue);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("O valor da rolagem de d100 deve estar entre 1 e 100.", result.Error);
+    }
+
+    [Fact]
+    public void EvaluateRoll_NegativeSkillValue_ReturnsFailure()
+    {
+        var result = SkillCheckEngine.EvaluateRoll(50, -10);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("O valor da perícia não pode ser negativo.", result.Error);
     }
 
     [Fact]
@@ -73,10 +98,11 @@ public class SkillCheckEngineTests
         {
             var result = SkillCheckEngine.RollCheck(50, 1);
 
-            Assert.True(result.RollValue is >= 1 and <= 100);
-            Assert.Equal(1, result.BonusPenaltyDice);
-            Assert.Equal(50, result.TargetValue);
-            Assert.Equal(result.Level >= SuccessLevel.Regular, result.IsSuccess);
+            Assert.True(result.IsSuccess);
+            Assert.True(result.Value.RollValue is >= 1 and <= 100);
+            Assert.Equal(1, result.Value.BonusPenaltyDice);
+            Assert.Equal(50, result.Value.TargetValue);
+            Assert.Equal(result.Value.Level >= SuccessLevel.Regular, result.Value.IsSuccess);
         }
     }
 
@@ -87,10 +113,11 @@ public class SkillCheckEngineTests
         {
             var result = SkillCheckEngine.RollCheck(50, -1);
 
-            Assert.True(result.RollValue is >= 1 and <= 100);
-            Assert.Equal(-1, result.BonusPenaltyDice);
-            Assert.Equal(50, result.TargetValue);
-            Assert.Equal(result.Level >= SuccessLevel.Regular, result.IsSuccess);
+            Assert.True(result.IsSuccess);
+            Assert.True(result.Value.RollValue is >= 1 and <= 100);
+            Assert.Equal(-1, result.Value.BonusPenaltyDice);
+            Assert.Equal(50, result.Value.TargetValue);
+            Assert.Equal(result.Value.Level >= SuccessLevel.Regular, result.Value.IsSuccess);
         }
     }
 
@@ -101,10 +128,11 @@ public class SkillCheckEngineTests
         {
             var result = SkillCheckEngine.RollCheck(60, 0);
 
-            Assert.True(result.RollValue is >= 1 and <= 100);
-            Assert.Equal(0, result.BonusPenaltyDice);
-            Assert.Equal(60, result.TargetValue);
-            Assert.Equal(result.Level >= SuccessLevel.Regular, result.IsSuccess);
+            Assert.True(result.IsSuccess);
+            Assert.True(result.Value.RollValue is >= 1 and <= 100);
+            Assert.Equal(0, result.Value.BonusPenaltyDice);
+            Assert.Equal(60, result.Value.TargetValue);
+            Assert.Equal(result.Value.Level >= SuccessLevel.Regular, result.Value.IsSuccess);
         }
     }
 
@@ -119,7 +147,8 @@ public class SkillCheckEngineTests
 
         var result = SkillCheckEngine.ResolveBaseValue(skill, dexterity);
 
-        Assert.Equal(expectedValue, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(expectedValue, result.Value);
     }
 
     [Fact]
@@ -129,7 +158,19 @@ public class SkillCheckEngineTests
 
         var result = SkillCheckEngine.ResolveBaseValue(skill, dexterity: 80);
 
-        Assert.Equal(25, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(25, result.Value);
+    }
+
+    [Fact]
+    public void ResolveBaseValue_NegativeDexterity_ReturnsFailure()
+    {
+        var skill = new SkillDefinition("dodge", "Dodge", 0, "Physical", "", DerivedAttribute: "DEX_DIV_2");
+
+        var result = SkillCheckEngine.ResolveBaseValue(skill, dexterity: -10);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("O valor de Destreza não pode ser negativo.", result.Error);
     }
 
     [Theory]
@@ -169,13 +210,14 @@ public class SkillCheckEngineTests
         {
             var result = SkillCheckEngine.RollTaskCheck(60, requiredLevel, bonusPenalty: 0);
 
-            Assert.InRange(result.RollValue, 1, 100);
-            Assert.Equal(60, result.TargetValue);
-            Assert.Equal(0, result.BonusPenaltyDice);
-            Assert.Equal(requiredLevel, result.RequiredLevel);
+            Assert.True(result.IsSuccess);
+            Assert.InRange(result.Value.RollValue, 1, 100);
+            Assert.Equal(60, result.Value.TargetValue);
+            Assert.Equal(0, result.Value.BonusPenaltyDice);
+            Assert.Equal(requiredLevel, result.Value.RequiredLevel);
 
-            var expectedSuccess = SkillCheckEngine.IsTaskSuccessful(result.Level, requiredLevel);
-            Assert.Equal(expectedSuccess, result.IsSuccess);
+            var expectedSuccess = SkillCheckEngine.IsTaskSuccessful(result.Value.Level, requiredLevel);
+            Assert.Equal(expectedSuccess, result.Value.IsSuccess);
         }
     }
 
@@ -183,11 +225,22 @@ public class SkillCheckEngineTests
     public void RollTaskCheck_WithBonusAndPenaltyDice_AppliesModifierCorrectly()
     {
         var bonusResult = SkillCheckEngine.RollTaskCheck(50, SuccessLevel.Hard, bonusPenalty: 1);
-        Assert.Equal(1, bonusResult.BonusPenaltyDice);
-        Assert.Equal(SuccessLevel.Hard, bonusResult.RequiredLevel);
+        Assert.True(bonusResult.IsSuccess);
+        Assert.Equal(1, bonusResult.Value.BonusPenaltyDice);
+        Assert.Equal(SuccessLevel.Hard, bonusResult.Value.RequiredLevel);
 
         var penaltyResult = SkillCheckEngine.RollTaskCheck(50, SuccessLevel.Regular, bonusPenalty: -1);
-        Assert.Equal(-1, penaltyResult.BonusPenaltyDice);
-        Assert.Equal(SuccessLevel.Regular, penaltyResult.RequiredLevel);
+        Assert.True(penaltyResult.IsSuccess);
+        Assert.Equal(-1, penaltyResult.Value.BonusPenaltyDice);
+        Assert.Equal(SuccessLevel.Regular, penaltyResult.Value.RequiredLevel);
+    }
+
+    [Fact]
+    public void RollTaskCheck_NegativeSkillValue_ReturnsFailure()
+    {
+        var result = SkillCheckEngine.RollTaskCheck(-10, SuccessLevel.Regular);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("O valor da perícia não pode ser negativo.", result.Error);
     }
 }

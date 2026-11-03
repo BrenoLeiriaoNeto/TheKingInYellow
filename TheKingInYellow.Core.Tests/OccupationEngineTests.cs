@@ -14,7 +14,16 @@ public class OccupationEngineTests
     public void CalculatePersonalInterestPoints_ValidIntelligence_ReturnsDouble(int intValue, int expectedPoints)
     {
         var result = OccupationEngine.CalculatePersonalInterestPoints(intValue);
-        Assert.Equal(expectedPoints, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(expectedPoints, result.Value);
+    }
+
+    [Fact]
+    public void CalculatePersonalInterestPoints_NegativeIntelligence_ReturnsFailure()
+    {
+        var result = OccupationEngine.CalculatePersonalInterestPoints(-10);
+        Assert.True(result.IsFailure);
+        Assert.Equal("O atributo Inteligência não pode ser negativo.", result.Error);
     }
 
     [Fact]
@@ -44,7 +53,8 @@ public class OccupationEngineTests
         var result = OccupationEngine.CalculateOccupationPoints(occupation, attributes);
 
         // 70 * 4 = 280
-        Assert.Equal(280, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(280, result.Value);
     }
 
     [Fact]
@@ -77,7 +87,8 @@ public class OccupationEngineTests
         var result = OccupationEngine.CalculateOccupationPoints(occupation, attributes, chosenSecondaryAttr: "STR");
 
         // EDU * 2 + STR * 2 = 60 * 2 + 40 * 2 = 200
-        Assert.Equal(200, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(200, result.Value);
     }
 
     [Fact]
@@ -111,7 +122,8 @@ public class OccupationEngineTests
         var result = OccupationEngine.CalculateOccupationPoints(occupation, attributes, chosenSecondaryAttr: null);
 
         // EDU * 2 + DEX * 2 = 50 * 2 + 90 * 2 = 280
-        Assert.Equal(280, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(280, result.Value);
     }
 
     [Fact]
@@ -144,7 +156,8 @@ public class OccupationEngineTests
         var result = OccupationEngine.CalculateOccupationPoints(occupation, attributes, chosenSecondaryAttr: "POW");
 
         // EDU * 2 + DEX * 2 = 50 * 2 + 85 * 2 = 270
-        Assert.Equal(270, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(270, result.Value);
     }
 
     [Fact]
@@ -171,6 +184,37 @@ public class OccupationEngineTests
 
         var result = OccupationEngine.CalculateOccupationPoints(occupation, attributes);
 
-        Assert.Equal(0, result);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(0, result.Value);
+    }
+
+    [Fact]
+    public void CalculateOccupationPoints_NullOccupation_ReturnsFailure()
+    {
+        var attributes = new Dictionary<string, int> { { "EDU", 60 } };
+        var result = OccupationEngine.CalculateOccupationPoints(null!, attributes);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("A definição da ocupação não pode ser nula.", result.Error);
+    }
+
+    [Fact]
+    public void CalculateOccupationPoints_NullAttributes_ReturnsFailure()
+    {
+        var occupation = new OccupationDefinition(
+            Id: "scholar",
+            Name: "Scholar",
+            Description: "A researcher",
+            CreditRatingMin: 10,
+            CreditRatingMax: 40,
+            Formula: new OccupationFormula("EDU", 4, [], 0),
+            SkillIds: [],
+            SuggestedContacts: []
+        );
+
+        var result = OccupationEngine.CalculateOccupationPoints(occupation, null!);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("O dicionário de atributos não pode ser nulo.", result.Error);
     }
 }

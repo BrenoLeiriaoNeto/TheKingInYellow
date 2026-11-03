@@ -1,3 +1,4 @@
+using TheKingInYellow.Core.Domain.Primitives;
 using TheKingInYellow.Core.Domain.ValueObjects;
 
 namespace TheKingInYellow.Core.Services;
@@ -15,14 +16,23 @@ public static class OccupationValidator
     /// <param name="occupation">A definição da ocupação contendo as restrições e slots de perícias exigidos.</param>
     /// <param name="chosenSkillIds">A lista de identificadores das perícias selecionadas pelo jogador.</param>
     /// <param name="allSkillDefinitions">A lista completa contendo todas as definições de perícias disponíveis.</param>
-    /// <returns><c>true</c> se a seleção de perícias for válida para a ocupação informada; caso contrário, <c>false</c>.</returns>
-    public static bool ValidateSkillSelection(
+    /// <returns>Um <see cref="Result"/> indicando sucesso ou falha com a descrição da inconsistência encontrada.</returns>
+    public static Result ValidateSkillSelection(
         OccupationDefinition occupation,
         IReadOnlyList<string> chosenSkillIds,
         IReadOnlyList<SkillDefinition> allSkillDefinitions)
     {
-        if (chosenSkillIds.Count != 8 || chosenSkillIds.Distinct().Count() != 8)
-            return false;
+        if (occupation == null)
+            return Result.Failure("A definição da ocupação não pode ser nula.");
+
+        if (chosenSkillIds == null || chosenSkillIds.Count != 8)
+            return Result.Failure("A seleção de perícias deve conter exatamente 8 perícias.");
+
+        if (chosenSkillIds.Distinct().Count() != 8)
+            return Result.Failure("A seleção de perícias não pode conter perícias duplicadas.");
+
+        if (allSkillDefinitions == null)
+            return Result.Failure("A lista de definições de perícias não pode ser nula.");
 
         var skillsMap = allSkillDefinitions.ToDictionary(s => s.Id);
         var remainingSlots = occupation.SkillIds.ToList();
@@ -75,6 +85,12 @@ public static class OccupationValidator
             }
         }
 
-        return unassignedChosen.Count == 0;
+        if (unassignedChosen.Count > 0)
+        {
+            return Result.Failure(
+                $"As seguintes perícias não atendem aos requisitos da ocupação: {string.Join(", ", unassignedChosen)}.");
+        }
+
+        return Result.Success();
     }
 }

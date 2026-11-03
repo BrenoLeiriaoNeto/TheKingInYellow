@@ -44,6 +44,12 @@ public readonly struct Result
         Debug.WriteLine($"[Result Failure] {error}");
         return new Result(false, error);
     }
+
+    /// <summary>
+    /// Converte implicitamente uma instância de <see cref="Result"/> para <c>true</c> se a operação for bem-sucedida, ou <c>false</c> caso contrário.
+    /// </summary>
+    /// <param name="result">A instância de <see cref="Result"/>.</param>
+    public static implicit operator bool(Result result) => result.IsSuccess;
 }
 
 /// <summary>
@@ -103,4 +109,10 @@ public readonly struct Result<T>
     /// </summary>
     /// <param name="value">O valor a ser encapsulado no resultado.</param>
     public static implicit operator Result<T>(T value) => Success(value);
+
+    /// <summary>
+    /// Converte implicitamente uma instância de <see cref="Result{T}"/> para o seu valor subjacente.
+    /// </summary>
+    /// <param name="result">A instância de <see cref="Result{T}"/>.</param>
+    public static implicit operator T(Result<T> result) => result.Value!;
 }

@@ -17,8 +17,9 @@ public class DiceRollerTests
     {
         for (var i = 0; i < 100; i++)
         {
-            var roll = DiceRoller.Roll(sides);
-            Assert.InRange(roll, 1, sides);
+            var rollResult = DiceRoller.Roll(sides);
+            Assert.True(rollResult.IsSuccess);
+            Assert.InRange(rollResult.Value, 1, sides);
         }
     }
 
@@ -26,10 +27,11 @@ public class DiceRollerTests
     [InlineData(0)]
     [InlineData(-1)]
     [InlineData(-10)]
-    public void Roll_InvalidSides_ThrowsArgumentOutOfRangeException(int invalidSides)
+    public void Roll_InvalidSides_ReturnsFailure(int invalidSides)
     {
-        var ex = Assert.Throws<ArgumentOutOfRangeException>(() => DiceRoller.Roll(invalidSides));
-        Assert.Equal("sides", ex.ParamName);
+        var result = DiceRoller.Roll(invalidSides);
+        Assert.True(result.IsFailure);
+        Assert.Equal("A quantidade de lados do dado deve ser no mínimo 1.", result.Error);
     }
 
     [Theory]
@@ -42,39 +44,40 @@ public class DiceRollerTests
     {
         var result = DiceRoller.RollDice(count, sides, modifier);
 
-        Assert.Equal(count, result.DiceCount);
-        Assert.Equal(sides, result.Sides);
-        Assert.Equal(modifier, result.Modifier);
-        Assert.Equal(count, result.IndividualRolls.Count);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(count, result.Value.DiceCount);
+        Assert.Equal(sides, result.Value.Sides);
+        Assert.Equal(modifier, result.Value.Modifier);
+        Assert.Equal(count, result.Value.IndividualRolls.Count);
 
         var sum = 0;
-        foreach (var roll in result.IndividualRolls)
+        foreach (var roll in result.Value.IndividualRolls)
         {
             Assert.InRange(roll, 1, sides);
             sum += roll;
         }
 
-        Assert.Equal(sum + modifier, result.Total);
+        Assert.Equal(sum + modifier, result.Value.Total);
     }
 
     [Theory]
     [InlineData(0, 6)]
     [InlineData(-1, 6)]
-    public void RollDice_InvalidCount_ThrowsArgumentOutOfRangeException(int invalidCount, int sides)
+    public void RollDice_InvalidCount_ReturnsFailure(int invalidCount, int sides)
     {
-        var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
-            DiceRoller.RollDice(invalidCount, sides));
-        Assert.Equal("count", ex.ParamName);
+        var result = DiceRoller.RollDice(invalidCount, sides);
+        Assert.True(result.IsFailure);
+        Assert.Equal("A quantidade de dados deve ser maior que zero.", result.Error);
     }
 
     [Theory]
     [InlineData(1, 0)]
     [InlineData(2, -5)]
-    public void RollDice_InvalidSides_ThrowsArgumentOutOfRangeException(int count, int invalidSides)
+    public void RollDice_InvalidSides_ReturnsFailure(int count, int invalidSides)
     {
-        var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
-            DiceRoller.RollDice(count, invalidSides));
-        Assert.Equal("sides", ex.ParamName);
+        var result = DiceRoller.RollDice(count, invalidSides);
+        Assert.True(result.IsFailure);
+        Assert.Equal("A quantidade de lados do dado deve ser no mínimo 1.", result.Error);
     }
 
     [Fact]

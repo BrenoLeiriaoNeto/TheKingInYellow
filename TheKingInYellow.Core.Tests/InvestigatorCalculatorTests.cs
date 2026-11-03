@@ -12,8 +12,19 @@ public class InvestigatorCalculatorTests
     [InlineData(90, 90, 18)]
     public void CalculateMaxHp_ShouldReturnCorrectValue(int con, int siz, int expectedHp)
     {
-        var actualHp = InvestigatorCalculator.CalculateMaxHp(con, siz);
-        Assert.Equal(expectedHp, actualHp);
+        var result = InvestigatorCalculator.CalculateMaxHp(con, siz);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(expectedHp, result.Value);
+    }
+
+    [Theory]
+    [InlineData(-10, 50)]
+    [InlineData(50, -5)]
+    public void CalculateMaxHp_NegativeInputs_ReturnsFailure(int con, int siz)
+    {
+        var result = InvestigatorCalculator.CalculateMaxHp(con, siz);
+        Assert.True(result.IsFailure);
+        Assert.Equal("Os atributos CON e SIZ não podem ser negativos.", result.Error);
     }
 
     [Theory]
@@ -22,8 +33,17 @@ public class InvestigatorCalculatorTests
     [InlineData(0, 0)]
     public void CalculateMaxLucidity_ShouldReturnPow(int pow, int expectedLucidity)
     {
-        var actual = InvestigatorCalculator.CalculateMaxLucidity(pow);
-        Assert.Equal(expectedLucidity, actual);
+        var result = InvestigatorCalculator.CalculateMaxLucidity(pow);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(expectedLucidity, result.Value);
+    }
+
+    [Fact]
+    public void CalculateMaxLucidity_NegativePow_ReturnsFailure()
+    {
+        var result = InvestigatorCalculator.CalculateMaxLucidity(-5);
+        Assert.True(result.IsFailure);
+        Assert.Equal("O atributo POW não pode ser negativo.", result.Error);
     }
 
     [Theory]
@@ -33,8 +53,17 @@ public class InvestigatorCalculatorTests
     [InlineData(0, 0)]
     public void CalculateMaxMp_ShouldReturnPowDividedByFive(int pow, int expectedMp)
     {
-        var actual = InvestigatorCalculator.CalculateMaxMp(pow);
-        Assert.Equal(expectedMp, actual);
+        var result = InvestigatorCalculator.CalculateMaxMp(pow);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(expectedMp, result.Value);
+    }
+
+    [Fact]
+    public void CalculateMaxMp_NegativePow_ReturnsFailure()
+    {
+        var result = InvestigatorCalculator.CalculateMaxMp(-1);
+        Assert.True(result.IsFailure);
+        Assert.Equal("O atributo POW não pode ser negativo.", result.Error);
     }
 
     [Theory]
@@ -53,9 +82,20 @@ public class InvestigatorCalculatorTests
         int str, int siz, string expectedDb, int expectedBuild
     )
     {
-        var (actualDb, actualBuild) = InvestigatorCalculator.CalculateDamageBonusAndBuild(str, siz);
-        Assert.Equal(expectedDb, actualDb);
-        Assert.Equal(expectedBuild, actualBuild);
+        var result = InvestigatorCalculator.CalculateDamageBonusAndBuild(str, siz);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(expectedDb, result.Value.DamageBonus);
+        Assert.Equal(expectedBuild, result.Value.Build);
+    }
+
+    [Theory]
+    [InlineData(-1, 50)]
+    [InlineData(50, -10)]
+    public void CalculateDamageBonusAndBuild_NegativeInputs_ReturnsFailure(int str, int siz)
+    {
+        var result = InvestigatorCalculator.CalculateDamageBonusAndBuild(str, siz);
+        Assert.True(result.IsFailure);
+        Assert.Equal("Os atributos STR e SIZ não podem ser negativos.", result.Error);
     }
 
     [Theory]
@@ -80,7 +120,20 @@ public class InvestigatorCalculatorTests
         int str, int dex, int siz, int age, int expectedMov
     )
     {
-        var actualMov = InvestigatorCalculator.CalculateMovementRate(str, dex, siz, age);
-        Assert.Equal(expectedMov, actualMov);
+        var result = InvestigatorCalculator.CalculateMovementRate(str, dex, siz, age);
+        Assert.True(result.IsSuccess);
+        Assert.Equal(expectedMov, result.Value);
+    }
+
+    [Theory]
+    [InlineData(-1, 50, 50, 30)]
+    [InlineData(50, -1, 50, 30)]
+    [InlineData(50, 50, -1, 30)]
+    [InlineData(50, 50, 50, -1)]
+    public void CalculateMovementRate_NegativeInputs_ReturnsFailure(int str, int dex, int siz, int age)
+    {
+        var result = InvestigatorCalculator.CalculateMovementRate(str, dex, siz, age);
+        Assert.True(result.IsFailure);
+        Assert.Equal("Atributos e idade não podem ser negativos.", result.Error);
     }
 }

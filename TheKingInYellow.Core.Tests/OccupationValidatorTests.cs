@@ -52,7 +52,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.True(result.IsFailure);
+        Assert.NotEmpty(result.Error);
     }
 
     [Fact]
@@ -63,7 +65,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.True(result.IsFailure);
+        Assert.NotEmpty(result.Error);
     }
 
     [Fact]
@@ -74,7 +78,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.True(result.IsFailure);
+        Assert.NotEmpty(result.Error);
     }
 
     [Fact]
@@ -92,7 +98,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.True(result);
+        Assert.True(result.IsSuccess);
+        Assert.False(result.IsFailure);
+        Assert.Empty(result.Error);
     }
 
     [Fact]
@@ -110,7 +118,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.True(result);
+        Assert.True(result.IsSuccess);
+        Assert.False(result.IsFailure);
+        Assert.Empty(result.Error);
     }
 
     [Fact]
@@ -129,7 +139,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.True(result.IsFailure);
+        Assert.NotEmpty(result.Error);
     }
 
     [Fact]
@@ -148,7 +160,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.True(result);
+        Assert.True(result.IsSuccess);
+        Assert.False(result.IsFailure);
+        Assert.Empty(result.Error);
     }
 
     [Fact]
@@ -167,7 +181,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.True(result.IsFailure);
+        Assert.NotEmpty(result.Error);
     }
 
     [Fact]
@@ -185,7 +201,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.True(result);
+        Assert.True(result.IsSuccess);
+        Assert.False(result.IsFailure);
+        Assert.Empty(result.Error);
     }
 
     [Fact]
@@ -213,7 +231,9 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.True(result);
+        Assert.True(result.IsSuccess);
+        Assert.False(result.IsFailure);
+        Assert.Empty(result.Error);
     }
 
     [Fact]
@@ -231,6 +251,41 @@ public class OccupationValidatorTests
 
         var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, _allSkills);
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.True(result.IsFailure);
+        Assert.NotEmpty(result.Error);
+    }
+
+    [Fact]
+    public void ValidateSkillSelection_NullOccupation_ReturnsFailure()
+    {
+        var chosen = new[]
+        {
+            "accounting", "anthropology", "history", "library_use",
+            "spot_hidden", "listen", "stealth", "locksmith"
+        };
+
+        var result = OccupationValidator.ValidateSkillSelection(null!, chosen, _allSkills);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("A definição da ocupação não pode ser nula.", result.Error);
+    }
+
+    [Fact]
+    public void ValidateSkillSelection_NullSkillDefinitions_ReturnsFailure()
+    {
+        var occupation = CreateOccupation(
+            "accounting", "anthropology", "history", "library_use",
+            "spot_hidden", "listen", "stealth", "locksmith");
+        var chosen = new[]
+        {
+            "accounting", "anthropology", "history", "library_use",
+            "spot_hidden", "listen", "stealth", "locksmith"
+        };
+
+        var result = OccupationValidator.ValidateSkillSelection(occupation, chosen, null!);
+
+        Assert.True(result.IsFailure);
+        Assert.Equal("A lista de definições de perícias não pode ser nula.", result.Error);
     }
 }
