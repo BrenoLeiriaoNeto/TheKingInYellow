@@ -1,4 +1,5 @@
 using TheKingInYellow.Core.Domain.Enums;
+using TheKingInYellow.Core.Domain.Primitives;
 using TheKingInYellow.Core.Domain.ValueObjects;
 
 namespace TheKingInYellow.Core.Services;
@@ -14,8 +15,8 @@ public static class SkillCheckEngine
     /// </summary>
     /// <param name="skillValue">O valor percentual da perícia do personagem (alvo do teste).</param>
     /// <param name="bonusPenaltyDice">A quantidade de dados extras de dezena: valores positivos indicam bônus e valores negativos indicam penalidade.</param>
-    /// <returns>Uma estrutura <see cref="SkillCheckResult"/> contendo os detalhes e o resultado consolidado do teste.</returns>
-    public static SkillCheckResult RollCheck(int skillValue, int bonusPenaltyDice = 0)
+    /// <returns>Um <see cref="Result{T}"/> contendo a estrutura <see cref="SkillCheckResult"/> com os detalhes e o resultado consolidado do teste.</returns>
+    public static Result<SkillCheckResult> RollCheck(int skillValue, int bonusPenaltyDice = 0)
     {
         return RollTaskCheck(
              skillValue,
@@ -28,21 +29,27 @@ public static class SkillCheckEngine
     /// </summary>
     /// <param name="roll">O valor obtido na rolagem do d100 (1 a 100).</param>
     /// <param name="skillValue">O valor da perícia do personagem.</param>
-    /// <returns>O nível de sucesso correspondente (<see cref="SuccessLevel"/>).</returns>
-    public static SuccessLevel EvaluateRoll(int roll, int skillValue)
+    /// <returns>Um <see cref="Result{T}"/> com o nível de sucesso correspondente (<see cref="SuccessLevel"/>) ou falha se a rolagem for inválida.</returns>
+    public static Result<SuccessLevel> EvaluateRoll(int roll, int skillValue)
     {
+        if (roll < 1 || roll > 100)
+            return Result<SuccessLevel>.Failure("O valor da rolagem de d100 deve estar entre 1 e 100.", SuccessLevel.Failure);
+
+        if (skillValue < 0)
+            return Result<SuccessLevel>.Failure("O valor da perícia não pode ser negativo.", SuccessLevel.Failure);
+
         var isFumble = skillValue < 50 ? roll >= 96 : roll == 100;
-        if (isFumble) return SuccessLevel.Fumble;
+        if (isFumble) return Result<SuccessLevel>.Success(SuccessLevel.Fumble);
 
-        if (roll == 1) return SuccessLevel.Critical;
+        if (roll == 1) return Result<SuccessLevel>.Success(SuccessLevel.Critical);
 
-        if (roll > skillValue) return SuccessLevel.Failure;
+        if (roll > skillValue) return Result<SuccessLevel>.Success(SuccessLevel.Failure);
 
         var extremeTarget = skillValue / 5;
         var hardTarget = skillValue / 2;
 
-        if (roll <= extremeTarget) return SuccessLevel.Extreme;
-        return roll <= hardTarget ? SuccessLevel.Hard : SuccessLevel.Regular;
+        if (roll <= extremeTarget) return Result<SuccessLevel>.Success(SuccessLevel.Extreme);
+        return Result<SuccessLevel>.Success(roll <= hardTarget ? SuccessLevel.Hard : SuccessLevel.Regular);
     }
 
     /// <summary>
@@ -50,12 +57,15 @@ public static class SkillCheckEngine
     /// </summary>
     /// <param name="skill">A definição da perícia a ser calculada.</param>
     /// <param name="dexterity">O valor do atributo Destreza (DEX) do personagem.</param>
-    /// <returns>O valor base calculado da perícia.</returns>
-    public static int ResolveBaseValue(SkillDefinition skill, int dexterity)
+    /// <returns>Um <see cref="Result{T}"/> com o valor base calculado da perícia.</returns>
+    public static Result<int> ResolveBaseValue(SkillDefinition skill, int dexterity)
     {
-        if (skill.DerivedAttribute == "DEX_DIV_2") return dexterity / 2;
+        if (dexterity < 0)
+            return Result<int>.Failure("O valor de Destreza não pode ser negativo.", skill.BaseValue);
 
-        return skill.BaseValue;
+        if (skill.DerivedAttribute == "DEX_DIV_2") return Result<int>.Success(dexterity / 2);
+
+        return Result<int>.Success(skill.BaseValue);
     }
 
     /// <summary>
@@ -105,20 +115,25 @@ public static class SkillCheckEngine
     /// <param name="skillValue">O valor percentual da perícia do personagem (alvo do teste).</param>
     /// <param name="requiredLevel">O nível mínimo de sucesso exigido para a tarefa.</param>
     /// <param name="bonusPenalty">A quantidade de dados extras de dezena: valores positivos indicam bônus e valores negativos indicam penalidade.</param>
-    /// <returns>Uma estrutura <see cref="SkillCheckResult"/> contendo a rolagem, nível obtido, exigência e se foi bem-sucedida.</returns>
-    public static SkillCheckResult RollTaskCheck(int skillValue, SuccessLevel requiredLevel,
+    /// <returns>Um <see cref="Result{T}"/> contendo a estrutura <see cref="SkillCheckResult"/> com a rolagem, nível obtido, exigência e status de sucesso.</returns>
+    public static Result<SkillCheckResult> RollTaskCheck(int skillValue, SuccessLevel requiredLevel,
         int bonusPenalty = 0)
     {
+        if (skillValue < 0)
+            return Result<SkillCheckResult>.Failure("O valor da perícia não pode ser negativo.",
+                new SkillCheckResult(0, skillValue, SuccessLevel.Failure, false, bonusPenalty, requiredLevel));
+
         var finalRoll = RollD100WithBonusPenalty(bonusPenalty);
-        var achievedLevel = EvaluateRoll(finalRoll, skillValue);
+        var achievedLevelResult = EvaluateRoll(finalRoll, skillValue);
+        var achievedLevel = achievedLevelResult.Value;
         var isSuccess = IsTaskSuccessful(achievedLevel, requiredLevel);
 
-        return new SkillCheckResult(
+        return Result<SkillCheckResult>.Success(new SkillCheckResult(
             RollValue: finalRoll,
             TargetValue: skillValue,
             Level: achievedLevel,
             IsSuccess: isSuccess,
             BonusPenaltyDice: bonusPenalty,
-            RequiredLevel: requiredLevel);
+            RequiredLevel: requiredLevel));
     }
 }
