@@ -14,7 +14,7 @@ public static class SaveEngine
         PropertyNameCaseInsensitive = true,
         WriteIndented = true
     };
-    
+
     /// <summary>
     /// Carrega e desserializa o conteúdo de um arquivo JSON para o tipo especificado, falhando graciosamente em caso de erro.
     /// </summary>
@@ -25,7 +25,7 @@ public static class SaveEngine
     {
         if (string.IsNullOrWhiteSpace(filePath))
             return Result<T>.Failure("O caminho do arquivo não pode ser nulo ou vazio.");
-        
+
         if (!File.Exists(filePath))
             return Result<T>.Failure($"O arquivo '{filePath}' não existe.");
 
@@ -34,8 +34,8 @@ public static class SaveEngine
             var json = File.ReadAllText(filePath);
             var data = JsonSerializer.Deserialize<T>(json, JsonOptions);
 
-            return data is null 
-                ? Result<T>.Failure("A desserialização retornou um objeto nulo.") 
+            return data is null
+                ? Result<T>.Failure("A desserialização retornou um objeto nulo.")
                 : Result<T>.Success(data);
         }
         catch (JsonException e)
@@ -68,7 +68,7 @@ public static class SaveEngine
             var json = JsonSerializer.Serialize(data, JsonOptions);
 
             File.WriteAllText(filePath, json);
-            
+
             return Result.Success();
         }
         catch (Exception e) when (e is JsonException or
