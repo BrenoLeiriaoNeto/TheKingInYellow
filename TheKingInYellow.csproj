@@ -8,6 +8,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Bridge\" />
+    <Folder Include="docs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\occupations.json" />
